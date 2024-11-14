@@ -1,0 +1,296 @@
+/* Estilos Globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Seção Superior */
+#topo {
+    background-image: url(../imagens/backgrounds/backIndex.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    min-height: 70%;
+    width: 100%;
+}
+
+#img {
+    width: 100%;
+}
+
+/* Menu de Navegação */
+#menu {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.2em;
+    width: 100%;
+}
+
+#listaMenu {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: bold;
+    list-style: none;
+    width: 60%;
+}
+
+.listaItem a {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Texto Centralizado */
+#textosCentro {
+    position: absolute;
+    top: 100px;
+    left: 25%;
+    min-height: 600px;
+    color: #fff;
+    width: 50%;
+}
+
+#bemVindo {
+    position: sticky;
+    top: 120px;
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+}
+
+/* Botão "Criar Mapa Astral" */
+#criarMapaAstral {
+    position: absolute;
+    top: 67%;
+    text-align: center;
+    width: 100%;
+}
+
+#btnMapa {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #DA22FF, #9733EE);
+}
+
+#btnMapa::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    background: linear-gradient(to right, #ffee00, #ffc642);
+    transition: 150ms ease-in-out;
+}
+
+#btnMapa:hover::after {
+    width: 100%;
+}
+
+#btnMapa:hover {
+    color: #fff;
+}
+
+/* Grade de Signos */
+#signGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+#divTituloSignos{
+    text-align: center;
+    margin-bottom: -40px;
+}
+
+.linhaSignos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    text-transform: capitalize;
+}
+
+.signos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.signos:hover {
+    background-color: rgba(157, 60, 248, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.imgSignos {
+    width: 80px;
+    padding: 5px;
+}
+
+/* Horóscopo */
+#divHoroscopo {
+    text-align: center;
+    margin-bottom: 150px;
+    width: 100%;
+}
+
+#divHoroscopoCards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+.cardHoroscopo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 15px;
+    margin: 0 10px;
+    width: 300px;
+    height: 130px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border-radius: 4px;
+    background-color: #9628d6;
+}
+
+.cardTitle {
+    font-size: 1.5em;
+}
+
+.leiaMais {
+    font-size: 1.2em;
+}
+
+.diario {
+    background-color: #586181;
+}
+
+.semanal {
+    background-color: #4d48af;
+}
+
+.mensal {
+    background-color: #9980f1;
+}
+
+/* Estilos para o menu dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdownLista {
+    display: none;
+    position: absolute;
+    left: -500px;
+    top: 25px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdownLista li {
+    text-align: left;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.dropdownLista li a {
+    color: #101010;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownLista li a:hover {
+    background-color: #eee;
+}
+
+.dropdown:hover .dropdownLista {
+    display: flex;
+}
+
+.menuItem {
+    position: relative;
+}
+
+.menuItem a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* Rodapé */
+footer {
+    background-color: #101010;
+    height: 400px;
+}
+
+/* Media Queries */
+/* Telas pequenas (mobile) - max-width 481px */
+@media (max-width: 481px) {
+    #menu {
+        width: 100%;
+    }
+
+    #listaMenu {
+        width: 100%;
+    }
+}
+
+/* Telas médias (pequeno tablet) - max-width 600px */
+@media (max-width: 600px) {
+    #listaMenu {
+        width: 80%;
+    }
+
+    #signGrid {
+        margin-inline: 20px;
+    }
+}
+
+
+
