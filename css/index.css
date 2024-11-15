@@ -8,7 +8,6 @@
 
 body {
     height: 100vh;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Seção Superior */
@@ -37,6 +36,17 @@ body {
     justify-content: center;
     padding-top: 1.2em;
     width: 100%;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+}
+
+span {
+    color: #00A2FF;
 }
 
 #listaMenu {
@@ -161,6 +171,10 @@ body {
     padding: 5px;
 }
 
+.dataSign{
+    font-weight: bold;
+}
+
 /* Horóscopo */
 #divHoroscopo {
     text-align: center;
@@ -175,6 +189,10 @@ body {
     margin-top: 20px;
     margin-inline: auto;
     width: 100%;
+}
+
+#divHoroscopoCards a {
+    text-decoration: none;
 }
 
 .cardHoroscopo {
@@ -192,6 +210,7 @@ body {
     letter-spacing: 0.01em;
     border-radius: 4px;
     background-color: #9628d6;
+    cursor: pointer;
 }
 
 .cardTitle {
@@ -200,6 +219,10 @@ body {
 
 .leiaMais {
     font-size: 1.2em;
+}
+
+.leiaMais:hover {
+    text-decoration: underline;
 }
 
 .diario {
@@ -212,44 +235,6 @@ body {
 
 .mensal {
     background-color: #9980f1;
-}
-
-/* Estilos para o menu dropdown */
-.dropdown {
-    position: relative;
-}
-
-.dropdownLista {
-    display: none;
-    position: absolute;
-    left: -500px;
-    top: 25px;
-    background-color: #fff;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-    min-width: 160px;
-    z-index: 1;
-    list-style-type: none;
-    padding: 0;
-}
-
-.dropdownLista li {
-    text-align: left;
-    padding: 10px 15px;
-    white-space: nowrap;
-}
-
-.dropdownLista li a {
-    color: #101010;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdownLista li a:hover {
-    background-color: #eee;
-}
-
-.dropdown:hover .dropdownLista {
-    display: flex;
 }
 
 .menuItem {

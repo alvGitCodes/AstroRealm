@@ -7,20 +7,30 @@
 
     <!-- css e js -->
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/layout.css">
+
+
     <script src="js/index.js" defer></script>
+    <!-- font google api -- Dosis -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
 
     <title>AstroMap</title>
 </head>
 
 <body>
     <div id="topo">
-        <nav id="menu">
+        <nav class="menu menuIndex">
+            <div id="logo"><a href="index.html">Astro<span>Realm</span></a></div>
             <ul id="listaMenu">
-                <li class="listaItem"><a href="index.html">Home</a></li>
-                <li class="listaItem"><a href="horoscopo.html">Horóscopo</a></li>
+                <li class="menuItem"><a href="index.html">Home</a></li>
+                <li class="menuItem"><a href="horoscopo.html">Horóscopo</a></li>
+
+                <!-- Menu Dropdown para Signos do Zodíaco -->
                 <li class="menuItem dropdown">
                     <a href="signos.html">Signos do Zodíaco</a>
-                    <ul class="dropdownLista">
+                    <ul class="dropdown-content">
                         <li><a href="signos/aries.html">Áries</a></li>
                         <li><a href="signos/touro.html">Touro</a></li>
                         <li><a href="signos/gemeos.html">Gêmeos</a></li>
@@ -35,13 +45,14 @@
                         <li><a href="signos/peixes.html">Peixes</a></li>
                     </ul>
                 </li>
-                <li class="listaItem"><a href="">Meu Mapa</a></li>
-                <li class="listaItem"><a href="">Astrologia</a></li>
-                <li class="listaItem"><a href="">Login</a></li>
+
+                <li class="menuItem"><a href="astrologia.html">Astrologia</a></li>
+                <li class="menuItem"><a href="meumapa.html">Meu Mapa</a></li>
+                <li class="menuItem"><a href="">Login</a></li>
             </ul>
         </nav>
         <div id="textosCentro">
-            <div id="bemVindo">Bem Vindo(a)</div>
+            <div id="bemVindo"></div>
 
         </div>
     </div>
@@ -54,38 +65,38 @@
         <div id="signGrid">
             <div id="divTituloSignos">
                 <h1>Os Signos Do Zodíaco</h1>
-                <h5>Previsões para o seu signo</h5>
+                <h3>Previsões para o seu signo</h3>
             </div>
-            
+
             <div class="linhaSignos">
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/aries.png" alt="aries">
-                    <div class="nomeSign">Áries</div>
+                    <div class="nomeSign"><strong>Áries</strong></div>
                     <div class="dataSign">mar 21 - abr 19</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/taurus.png" alt="touro">
-                    <div class="nomeSign">Touro</div>
+                    <div class="nomeSign"><strong>Touro</strong></div>
                     <div class="dataSign">abr 20 - mai 20</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/gemini.png" alt="gemeos">
-                    <div class="nomeSign">Gêmeos</div>
+                    <div class="nomeSign"><strong>Gêmeos</strong></div>
                     <div class="dataSign">mai 21 - jun 20</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/cancer.png" alt="cancer">
-                    <div class="nomeSign">Câncer</div>
+                    <div class="nomeSign"><strong>Câncer</strong></div>
                     <div class="dataSign">jun 21 - jul 22</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/leo.png" alt="leo">
-                    <div class="nomeSign">Leão</div>
+                    <div class="nomeSign"><strong>Leão</strong></div>
                     <div class="dataSign">jul 23 - ago 22</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/virgo.png" alt="virgo">
-                    <div class="nomeSign">Virgem</div>
+                    <div class="nomeSign"><strong>Virgem</strong></div>
                     <div class="dataSign">ago 23 - set 22</div>
                 </div>
             </div>
@@ -93,32 +104,32 @@
             <div class="linhaSignos">
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/libra.png" alt="libra">
-                    <div class="nomeSign">Libra</div>
+                    <div class="nomeSign"><strong>Libra</strong></div>
                     <div class="dataSign">set 23 - out 22</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/scorpio.png" alt="scorpio">
-                    <div class="nomeSign">Escorpião</div>
+                    <div class="nomeSign"><strong>Escorpião</strong></div>
                     <div class="dataSign">out 23 - nov 21</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/sagittarius.png" alt="sagitario">
-                    <div class="nomeSign">Sagitário</div>
+                    <div class="nomeSign"><strong>Sagitário</strong></div>
                     <div class="dataSign">nov 22 - dec 21</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/capricorn.png" alt="capricorn">
-                    <div class="nomeSign">Capricórnio</div>
+                    <div class="nomeSign"><strong>Capricórnio</strong></div>
                     <div class="dataSign">dec 22 - jan 19</div>
                 </div>
                 <div class="signos">
                     <img class="imgSignos" src="imagens/icones zodiaco/aquarius.png" alt="aquarius">
-                    <div class="nomeSign">Aquário</div>
+                    <div class="nomeSign"><strong>Aquário</strong></div>
                     <div class="dataSign">jan 20 - fev 18</div>
                 </div>
                 <div class="signos">
-                    <img class="imgSignos" src="imagens/icones zodiaco/pisces (1).png" alt="pisces">
-                    <div class="nomeSign">Peixes</div>
+                    <img class="imgSignos" src="imagens/icones zodiaco/pisces_8377050.png" alt="pisces">
+                    <div class="nomeSign"><strong>Peixes</strong></div>
                     <div class="dataSign">fev 19 - mar 20</div>
                 </div>
             </div>
@@ -128,10 +139,12 @@
         <div id="divHoroscopo">
             <h2>Horóscopo</h2>
             <div id="divHoroscopoCards">
-                <div class="cardHoroscopo diario">
-                    <div class="cardTitle">Horóscopo Diário...</div>
-                    <div class="leiaMais">Leia Mais</div>
-                </div>
+                <a href="horoscopo.html">
+                    <div class="cardHoroscopo diario">
+                        <div class="cardTitle">Horóscopo...</div>
+                        <div class="leiaMais">Leia Mais</div>
+                    </div>
+                </a>                
 
                 <div class="cardHoroscopo semanal">
                     <div class="cardTitle">Meu Mapa Astral...</div>

@@ -13,6 +13,7 @@ body {
     font-family: "Dosis", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    color: #2e3036;
 }
 
 #content {
@@ -27,7 +28,7 @@ body {
     background-color: #101010;
 }
 
-#menu {
+.menu {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -37,8 +38,19 @@ body {
     width: 100%;
 }
 
-#menu a {
+.menu a {
     color: #101010;
+    text-decoration: none;
+}
+
+.menuIndex {
+    padding: 0;
+    padding-left: 150px;
+    margin-top: -15px;
+}
+
+.menuIndex a {
+    color: #fff;
     text-decoration: none;
 }
 
@@ -57,7 +69,6 @@ body {
     gap: 1em;
     padding-left: 150px;
     margin-inline: auto;
-    font-size: 1.1em;
     list-style: none;
     color: #101010;
     width: 100%;
@@ -92,6 +103,23 @@ body {
     top: 200px;
 }
 
+#titleSigns {
+    position: relative;
+    margin-inline: auto;
+    width: max-content;
+    font-size: 2.7em;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+#titleSigns::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+}
+
 footer {
     height: 100px;
     background-color: #101010;
@@ -105,8 +133,8 @@ footer {
 .dropdown-content {
     display: none;
     position: absolute;
-    left: -400px;
-    top: 25px;
+    left: -500px;
+    top: 35px;
     background-color: #fff;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     min-width: 160px;
@@ -136,6 +164,7 @@ footer {
 }
 
 .menuItem {
+    font-size: 1.3em;
     position: relative;
 }
 
@@ -143,10 +172,13 @@ footer {
     padding: 10px;
 }
 
+.menuItem > a:hover{
+    color: #00A2FF;
+}
 
 /* Responsivo */
 @media (max-width: 768px) {
-    #menu {
+    .menu {
         flex-direction: column;
         align-items: center;
         height: max-content;
