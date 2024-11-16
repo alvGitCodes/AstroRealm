@@ -247,13 +247,6 @@ span {
     color: #fff;
 }
 
-
-/* Rodapé */
-footer {
-    background-color: #101010;
-    height: 400px;
-}
-
 /* Media Queries */
 /* Telas pequenas (mobile) - max-width 481px */
 @media (max-width: 481px) {

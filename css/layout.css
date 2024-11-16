@@ -120,11 +120,6 @@ body {
     background-color: #000;
 }
 
-footer {
-    height: 100px;
-    background-color: #101010;
-}
-
 /* Estilos para o menu dropdown */
 .dropdown {
     position: relative;
@@ -152,7 +147,7 @@ footer {
 .dropdown-content li a {
     color: #101010;
     text-decoration: none;
-    display: block;
+    display: block;    
 }
 
 .dropdown-content li a:hover {
