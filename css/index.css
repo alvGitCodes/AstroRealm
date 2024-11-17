@@ -138,7 +138,7 @@ span {
     width: 100%;
 }
 
-#divTituloSignos{
+#divTituloSignos {
     text-align: center;
     margin-bottom: -40px;
 }
@@ -171,7 +171,7 @@ span {
     padding: 5px;
 }
 
-.dataSign{
+.dataSign {
     font-weight: bold;
 }
 
@@ -247,7 +247,6 @@ span {
     color: #fff;
 }
 
-/* Media Queries */
 /* Telas pequenas (mobile) - max-width 481px */
 @media (max-width: 481px) {
     #menu {
@@ -269,6 +268,3 @@ span {
         margin-inline: 20px;
     }
 }
-
-
-
