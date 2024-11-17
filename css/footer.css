@@ -1,35 +1,52 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 footer {
     background-color: #101010;
     color: #fff;
     padding: 20px 0;
-    
+    border: 2px solid #00A2FF;
 }
 
 #footerContent {
     display: flex;
     flex-direction: column;
-    
+    border: 2px solid #00A2FF;
 }
 
-#footerDivs{
+#footerDivs {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    
+
 }
 
-#logoWrapper{
-    text-align: center;
+#logoWrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid #00A2FF;
 }
 
-#logoWrapper p{
+#logoWrapper p {
+    margin: 0;
+    padding: 0;
     font-size: 0.7em;
     text-align: center;
     color: #ccc;
+    border: 2px solid #00A2FF;
 }
 
-#logoFooter{
+#logoFooter {
     font-size: 2.5em;
+    margin: 0;
+    padding: 0;
 }
 
 .colunaFooter h3 {
@@ -39,7 +56,8 @@ footer {
     width: max-content;
 }
 
-.colunaFooter p, .colunaFooter ul {
+.colunaFooter p,
+.colunaFooter ul {
     font-size: 0.9em;
     color: #ccc;
 }
@@ -57,26 +75,76 @@ footer {
 }
 
 .footerCredits {
-    margin: auto;
+    margin-inline: auto;
     margin-top: 20px;
     font-size: 0.7em;
     color: #888;
 }
 
-#redesSociaisLinks{
+#redesSociaisLinks {
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
 }
-#redesSociaisLinks img{
+
+#redesSociaisLinks img {
     width: 25px;
 }
 
-#redesSociaisLinks li a{
+#redesSociaisLinks li a {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 0.8em;
+}
+
+@media (max-width: 385px) {
+    footer {
+        background-color: #101010;
+        color: #fff;
+        padding: 20px 0;
+
+    }
+
+    #logoWrapper {
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 150px;
+        align-items: center;
+
+        border: 2px solid #00A2FF;
+    }
+
+    #logoWrapper p {
+        font-size: 0.5em;
+        width: 100%;
+    }
+
+    #logoFooter {
+        margin-left: 12px;
+        font-size: 1.5em;
+    }
+
+    .colunaFooter h3 {
+        font-size: 0.6em;
+        margin-bottom: 5px;
+    }
+
+    .colunaFooter p,
+    .colunaFooter ul {
+        font-size: 0.5em;
+    }
+
+    .colunaFooter li {
+        margin-bottom: 2px;
+    }
+
+    .footerCredits {
+
+        font-size: 0.6em;
+       
+    }
 }

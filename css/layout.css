@@ -224,3 +224,24 @@ body {
         top: 120px;
     }
 }
+
+@media (max-width: 385px) {
+    #logo {
+        font-size: 2em;
+    }
+
+    #listaMenu {
+        flex-wrap: wrap;
+        font-size: 1em;
+        justify-content: center;
+    }
+
+    #banner {
+        font-size: 2rem;
+        height: 120px;
+    }
+
+    #banner::after {
+        top: 120px;
+    }
+}

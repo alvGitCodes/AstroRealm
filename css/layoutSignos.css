@@ -130,3 +130,30 @@ p {
         font-size: 1em;
     }
 }
+
+@media (max-width:385px) {
+    #tituloSign {
+        font-size: 2em;
+    }
+
+    #cabecalho {
+        margin-bottom: 50px;
+    }
+
+    p {
+        width: 80%;
+    }
+
+    #chamadaSigno {
+        font-size: 1.4em;
+    }
+
+    #divImageSign span {
+        font-size: 6em;
+    }
+
+    #listCharSigns {
+        margin-top: -5px;
+        font-size: 1em;
+    }
+}
