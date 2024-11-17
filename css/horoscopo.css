@@ -13,8 +13,6 @@ p {
 /* Conteúdo Geral */
 #content {
     font-family: "Dosis", sans-serif;
-    font-style: normal;
-    font-optical-sizing: auto;
 }
 
 /* Informações */
@@ -83,15 +81,6 @@ p {
 
 #tabelaSignos a {
     color: #000;
-}
-
-/* Rodapé */
-#footerContent {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: #fff;
-    font-size: 1.2em;
 }
 
 /* Media Queries */

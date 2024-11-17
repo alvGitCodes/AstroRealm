@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#conteudoHoroscopos{
+    width: 85%;
+    margin-inline: auto;
+    
+}
+
+#wrapperHoros{
+
+}
+
+#divTempo{
+    width: 50%;
+   
+}
+
+#tituloTempo{
+    text-align: center;
+}
+
+#linhaTempos{
+    display: flex;
+    justify-content: space-between;
+    max-width: 430px;
+    margin-inline: auto;
+}
+
+.cardTempos{
+    
+
+}
+
+.labelTempo{
+    
+    border: 1px solid #ddd;
+    border-top: 2px solid #00A2FF;
+    width: 100px;
+    border-radius: 0 0 5px 5px;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.2em;
+    background-color: #0066ff25;
+}
+
+#showApiResult{
+    
+    font-size: 1.2em;
+    text-align: justify;
+}
