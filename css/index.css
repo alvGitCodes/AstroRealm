@@ -45,10 +45,6 @@ body {
     font-size: 4em;
 }
 
-span {
-    color: #00A2FF;
-}
-
 #listaMenu {
     display: flex;
     justify-content: space-between;
@@ -136,6 +132,16 @@ span {
     margin-bottom: 150px;
     margin-inline: auto;
     width: 100%;
+}
+
+#signGrid a {
+    color: #2e3036;
+    text-decoration: none;
+}
+
+#signGrid a:hover {
+    color: #2e3036;
+    text-decoration: underline;
 }
 
 #divTituloSignos {

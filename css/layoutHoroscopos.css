@@ -11,12 +11,15 @@
 }
 
 #wrapperHoros{
+    margin-top: 50px;
 
 }
 
 #divTempo{
     width: 50%;
-   
+    /* margin: auto; */
+    border: 3px solid #00A2FF;
+    border-radius: 10px;
 }
 
 #tituloTempo{
@@ -25,30 +28,39 @@
 
 #linhaTempos{
     display: flex;
-    justify-content: space-between;
-    max-width: 430px;
-    margin-inline: auto;
+    justify-content: space-evenly;
+    /* border: 1px solid #00A2FF; */
+    margin: 20px auto;
 }
 
 .cardTempos{
-    
-
+    cursor: pointer;
 }
 
 .labelTempo{
     
     border: 1px solid #ddd;
-    border-top: 2px solid #00A2FF;
+    
     width: 100px;
-    border-radius: 0 0 5px 5px;
+    border-radius:5px;
     text-align: center;
     padding: 5px;
     font-size: 1.2em;
     background-color: #0066ff25;
 }
 
-#showApiResult{
-    
-    font-size: 1.2em;
+.selecionado{
+    border-top: 2px solid #00A2FF;
+    border-radius: 0 0 5px 5px;
+}
+
+#horoscopeDisplay{
+    font-weight: 600;
+    font-size: 1.5em;
     text-align: justify;
+}
+
+#tituloDisplay{
+    
+    text-align: center;
 }

@@ -81,7 +81,7 @@ body {
 }
 
 /* Estilos para os parágrafos */
-p {
+#infoSigno p {
     margin: 20px auto;
     width: 69%;
     font-size: 1.2em;
@@ -98,7 +98,7 @@ p {
         margin-bottom: 50px;
     }
 
-    p {
+    #infoSigno p {
         width: 80%;
     }
 }
@@ -113,7 +113,7 @@ p {
         margin-bottom: 50px;
     }
 
-    p {
+    #infoSigno p {
         width: 80%;
     }
 
@@ -140,7 +140,7 @@ p {
         margin-bottom: 50px;
     }
 
-    p {
+    #infoSigno p {
         width: 80%;
     }
 
