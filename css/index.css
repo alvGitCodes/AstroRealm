@@ -13,7 +13,6 @@ body {
 /* Seção Superior */
 #topo {
     background-image: url(../imagens/backgrounds/backIndex.jpg);
-    background-attachment: fixed;
     background-position: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -28,9 +27,6 @@ body {
 
 /* Menu de Navegação */
 #menu {
-    position: sticky;
-    top: 0;
-    z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,31 +58,114 @@ body {
 
 /* Texto Centralizado */
 #textosCentro {
-    position: absolute;
+    /* position: relative;
     top: 100px;
-    left: 25%;
-    min-height: 600px;
+    left: 25%; */
+    /* border: 1px solid #4d48af; */
+    margin-top: 90px;
     color: #fff;
-    width: 50%;
+    width: 100%;
+
 }
 
 #bemVindo {
-    position: sticky;
-    top: 120px;
     text-align: center;
     color: #fff;
     font-size: 3em;
 }
 
+#cardVoador{
+    /* border: 1px solid #4d48af; */
+    margin-inline: auto;
+    margin-top: 60px;
+    width: max-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+}
+
+.cardTopo{
+    background-color: #ffffff27;
+    width: 200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    margin: 0 5em 2em 5em;
+    font-size: 1.2em;
+}
+
 /* Botão "Criar Mapa Astral" */
+
+
+#divForm{
+    /* border: 2px solid #4d48af; */
+    text-align: center;
+    width: 50%;
+    margin-inline: auto;
+    margin-top: 70px;
+    display: none;
+}
+
+#formulario{
+    color: #fff;
+    display: flex;
+    flex-direction: column; 
+}
+
+#divNome{
+    margin-top: 100px;
+}
+
+#divChartInfos{
+    margin-top: 50px;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.divInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #9733EE; */
+}
+
+label{
+    font-size: 2em;
+}
+
+.inputs{
+    border-bottom: 2px solid #00A2FF;
+    background: transparent;
+    width: 400px;
+    color: #00A2FF;
+    outline: none;
+    font-size: 1.5em;
+    border-radius: 4px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.inputNome{
+    width: max-content;
+}
+
 #criarMapaAstral {
     position: absolute;
-    top: 67%;
+    top: 65.5%;
     text-align: center;
     width: 100%;
 }
 
-#btnMapa {
+#btnConfirmar{
+    display: none;
+    margin-inline: auto;
+}
+
+.btnIndex {
     position: relative;
     z-index: 3;
     display: inline-block;
@@ -100,7 +179,7 @@ body {
     background: linear-gradient(to right, #DA22FF, #9733EE);
 }
 
-#btnMapa::after {
+.btnIndex::after {
     content: '';
     position: absolute;
     top: 0;
@@ -113,15 +192,16 @@ body {
     transition: 150ms ease-in-out;
 }
 
-#btnMapa:hover::after {
+.btnIndex:hover::after {
     width: 100%;
 }
 
-#btnMapa:hover {
+.btnIndex:hover {
     color: #fff;
 }
 
 /* Grade de Signos */
+
 #signGrid {
     display: flex;
     flex-direction: column;

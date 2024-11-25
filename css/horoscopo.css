@@ -68,6 +68,7 @@
 #tabelaSignos p {
     width: 70%;
     text-align: justify;
+    
 }
 
 .tabelaItemCard {
@@ -81,6 +82,10 @@
 
 #tabelaSignos a {
     color: #000;
+}
+
+#tabelaSignos p a {
+    font-weight: bold;
 }
 
 /* Media Queries */

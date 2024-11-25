@@ -53,12 +53,53 @@
             </ul>
         </nav>
         <div id="textosCentro">
-            <div id="bemVindo"></div>
+            <div id="bemVindo">
+                Bem-Vindo(a) ao Astro Realm! <br>
+                <br> O melhor Site de Consultas Astrológicas do Senai.
+            </div>
+
+            <div id="cardVoador">
+                <div class="cardTopo">Mapas Astrais</div>
+                <div class="cardTopo">Horóscopos</div>
+                <div class="cardTopo">Previsões</div>
+                <div class="cardTopo"></div>
+                
+            </div>
         </div>
+
+        <div id="divForm" class="hid">
+            <div id="formulario">
+                <h1>Crie Seu Mapa Astral</h1>
+                <div id="divNome">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="inputs inputNome">
+                </div>
+                <div id="divChartInfos">
+                    <div class="divInputs">
+                        <label for="pais">País de Origem</label>
+                        <input type="text" id="pais" name="pais" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="cidade">Cidade de Nascimento</label>
+                        <input type="text" id="cidade" name="cidade" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="data">Data de Nascimento</label>
+                        <input type="date" id="data" name="data" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="hora">Hora de Nascimento</label>
+                        <input type="time" id="hora" name="hora" class="inputs">
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <div id="criarMapaAstral">
-        <button id="btnMapa" class="btn-grad">Criar Meu Mapa</button>
+        <button id="btnMapa" class="btnIndex">Criar Meu Mapa</button>
+        <button id="btnConfirmar" class="btnIndex">Confirmar</button>
     </div>
 
     <div id="bot">
