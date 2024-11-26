@@ -24,6 +24,11 @@
 // // Call the function
 // horoscopoDia();
 
+
+const urlParams = new URLSearchParams(window.location.search);
+console.log("urlParams: "+urlParams)
+const signo = urlParams.get('signo');
+console.log("signo: "+signo)
 // Elementos do DOM
 const horoscopeDisplay = document.getElementById("horoscopeDisplay");
 const hoje = document.querySelector(".hoje");
@@ -40,22 +45,22 @@ let tempoSemanaMes = ''; // Valor para o horóscopo semanal ou mensal
 // Eventos para os botões de tempo (hoje, amanhã, ontem)
 hoje.addEventListener("click", () => {
     tempo = 'today';
-    horoscopoDia(tempo);
+    horoscopoDia(signo, tempo);
 });
 
 amanha.addEventListener("click", () => {
     tempo = 'tomorrow';
-    horoscopoDia(tempo);
+    horoscopoDia(signo, tempo);
 });
 
 ontem.addEventListener("click", () => {
     tempo = 'yesterday';
-    horoscopoDia(tempo);
+    horoscopoDia(signo, tempo);
 });
 
 // Função para buscar o horóscopo diário
-const horoscopoDia = async (tempo) => {
-    const url = `https://horoscope19.p.rapidapi.com/get-horoscope/daily?sign=aries&day=${tempo}`;
+const horoscopoDia = async (signo, tempo) => {
+    const url = `https://horoscope19.p.rapidapi.com/get-horoscope/daily?sign=${signo}&day=${tempo}`;
     const options = {
         method: 'GET',
         headers: {
@@ -134,7 +139,7 @@ const horoscopoSemanaMes = async (tempoSemanaMes) => {
 };
 
 // Chamada inicial para carregar o horóscopo do dia
-horoscopoDia(tempo);
+horoscopoDia(signo, tempo);
 
 
 
