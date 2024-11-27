@@ -6,15 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/signos.css">
+    <link rel="stylesheet" href="css/mapa.css">
     <link rel="stylesheet" href="css/footer.css">
 
-    <script src="js/mapa.js" defer></script>
+    <!-- <script src="js/mapa.js" defer></script> -->
+    <!-- <script src="js/mapa2.js" defer></script> -->
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap" rel="stylesheet">
-    <title>Signos</title>
+    <title>Meu Mapa</title>
 </head>
 
 <body>
@@ -56,31 +57,37 @@
         </header>
 
         <div id="mapaWrapper">
-            <img src="" alt="">
-            <div id="divisoria">Mapa Astral</div>
-            <div id="infoUsuario">
-                <div id="nomeUsuario">nome</div>
-                <div id="localNasc">nome</div>
-                <div id="dataNasc">nome</div>
+            <div id="divMapa">
+                <img id="chart" src="" alt="">
+                <div class="divisoria">Mapa Astral</div>            
+                <div id="infoUsuario">
+                    <div id="nomeUsuario">alvaro leonardo gomes</div>
+                    <div id="localNasc" class="infosExtras">maceio alagoas brasil</div>
+                    <div id="dataNasc" class="infosExtras">abril 1 1997 6:39pm</div>
+                </div>
+                
+                <div class="titles">PLANETAS</div>
+                <div id="planetas">
+                    <div id="sol">Sun in 12° 11' Aries</div>
+                    <div id="lua">Sun in 12° 11' Aries</div>
+                    <div id="mercurio">Sun in 12° 11' Aries</div>
+                    <div id="venus">Sun in 12° 11' Aries</div>
+                    <div id="marte">Sun in 12° 11' Aries</div>
+                    <div id="jupiter">Sun in 12° 11' Aries</div>
+                    <div id="saturno">Sun in 12° 11' Aries</div>
+                    <div id="urano">Sun in 12° 11' Aries</div>
+                    <div id="netuno">Sun in 12° 11' Aries</div>
+                    <div id="plutao">Sun in 12° 11' Aries</div>
+                    <div id="northNode">Sun in 12° 11' Aries</div>
+                    <div id="chiron">Sun in 12° 11' Aries</div>
+                    <div id="ascendente">Sun in 12° 11' Aries</div>
+                    <div id="mc">Sun in 12° 11' Aries</div>
+                </div>
+
+                <div class="titles">ASPECTOS</div>
+                
             </div>
             
-            <div class="divisoria">Planetas</div>
-            <div id="planetas">
-                <div id="sol"></div>
-                <div id="lua"></div>
-                <div id="mercurio"></div>
-                <div id="venus"></div>
-                <div id="marte"></div>
-                <div id="jupiter"></div>
-                <div id="saturno"></div>
-                <div id="urano"></div>
-                <div id="netuno"></div>
-                <div id="plutao"></div>
-                <div id="northNode"></div>
-                <div id="chiron"></div>
-                <div id="ascendente"></div>
-                <div id="mc"></div>
-            </div>
         </div>
 
     </div>

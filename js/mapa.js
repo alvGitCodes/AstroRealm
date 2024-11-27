@@ -1,5 +1,12 @@
 // Selecionar o elemento onde será exibido o mapa
 const mapaWrapper = document.getElementById("mapaWrapper");
+const nomeUsuario = document.getElementById("nomeUsuario");
+const localNasc = document.getElementById("localNasc");
+const dataNasc = document.getElementById("dataNasc");
+const sol = document.getElementById("sol");
+const lua = document.getElementById("lua");
+const mercurio = document.getElementById("mercurio");
+const venus = document.getElementById("venus");
 
 // Recuperar os dados do sessionStorage
 const nome = sessionStorage.getItem("nome");
@@ -8,11 +15,15 @@ const cidade = sessionStorage.getItem("cidade");
 const data = sessionStorage.getItem("data");
 const hora = sessionStorage.getItem("hora");
 
+
+
+
+
 // Logs para verificar os dados capturados
 console.log("Dados recuperados do sessionStorage:", { nome, pais, cidade, data, hora });
 
 // Função para converter a data e hora em componentes individuais
-function parseDateAndTime(date, time) {
+const parseDateAndTime = (date, time) => {
     const [year, month, day] = date.split("-").map(Number);
     const [hour, minute] = time.split(":").map(Number);
 
@@ -76,7 +87,7 @@ async function fetchAstrologicalData() {
         zodiac_type: "Tropic",
     });
 
-    const url = "https://astrologer.p.rapidapi.com/api/v4/birth-chart";
+    const url = "https://astrologer.p.rapidapi.com/api/v4/birth-data";
     const options = {
         method: "POST",
         headers: {
@@ -99,7 +110,7 @@ async function fetchAstrologicalData() {
                 timezone: "UTC", // Atualize com o fuso horário correto, se necessário
                 zodiac_type: "Tropic",
             },
-            "language": "PT"
+            // "language": "PT"
         }),
     };
 
@@ -127,30 +138,33 @@ async function fetchAstrologicalData() {
         console.error("Erro ao buscar dados da API:", error);
         mapaWrapper.innerHTML = "<p>Ocorreu um erro ao gerar o mapa astral. Tente novamente mais tarde.</p>";
     }
+
+    
 }
 
 // Função para renderizar o mapa astral
-function renderBirthChart(data) {
+function renderBirthChart(dados) { //antigo data
     // Log para verificar os dados antes de renderizar
-    console.log("Dados recebidos para renderizar o mapa astral:", data);
+    console.log("Dados recebidos para renderizar o mapa astral:", dados);
 
-    if (!data) {
+    if (!dados) {
         mapaWrapper.innerHTML = "<p>Não foi possível gerar o mapa astral.</p>";
         return;
     }
 
-    mapaWrapper.innerHTML = `
-    <h3>Mapa Astral de ${data.subject.name}</h3>
-    <p><strong>Sol:</strong> ${data.sun.emoji} ${data.sun.sign} - Casa: ${data.sun.house}</p>
-    <p><strong>Lua:</strong> ${data.moon.emoji} ${data.moon.sign} - Casa: ${data.moon.house}</p>
-    <p><strong>Mercúrio:</strong> ${data.mercury.emoji} ${data.mercury.sign} - Casa: ${data.mercury.house}</p>
-    <p><strong>Vênus:</strong> ${data.venus.emoji} ${data.venus.sign} - Casa: ${data.venus.house}</p>
-    <p><strong>Fase da Lua:</strong> ${data.lunar_phase.moon_phase_name} 🌗 (${data.lunar_phase.moon_phase})</p>
-`;
+    nomeUsuario.innerHTML = dados.data.name;
+    sol.innerHTML = 'Sol: ' + dados.data.sun.emoji + ' - Casa: ' + data.sun.house;
+    lua.innerHTML = 'Lua: - Casa:' + data.data.moon.house
+    mercurio.innerHTML = 'Mercúrio: ' + '- Casa:' + data.mercury.house
+    venus.innerHTML = 'Vênus: ' + '- Casa:' + data.venus.house
+
+    
+    // <p><strong>Fase da Lua:</strong> ${data.lunar_phase.moon_phase_name} (${data.lunar_phase.moon_phase})</p>
+
 
 // Log para verificar a renderização
 console.log("Mapa Astral Renderizado");
 }
 
 // Chamar a função principal
-fetchAstrologicalData();
+// fetchAstrologicalData();
