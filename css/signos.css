@@ -1,5 +1,6 @@
 #banner{
-    background-color:rgb(255, 92, 16) ;
+    background-color:rgb(255, 92, 16);
+    background-color: #00A2FF;
 }
 
 #divConteudo{
@@ -7,7 +8,15 @@
     width: 100%;
 }
 
-.zodiac-wheel {
+#exibirSigno{
+    position: absolute;
+    border-bottom: 4px solid #000;
+    width: max-content;
+    font-size: 5em;
+    text-transform: capitalize;
+}
+
+.zodiacWheel {
     position: relative;
     width: 750px; /* Tamanho do círculo */
     height: 750px;
@@ -19,7 +28,7 @@
     border: 3px solid #000;
 }
 
-.zodiac-wheel::after{
+.zodiacWheel::after{
     content: '';
     position: absolute;
     border: 3px solid #000;
@@ -29,10 +38,16 @@
 }
 
 .sign {
+    
     position: absolute;
     font-size: 4em;    
     cursor: pointer;
     transform: rotate(var(--angle)) translate(305px) rotate(calc(-1 * var(--angle)));
+    transition: 1.2s ease-in-out;
+}
+
+.esconder{
+    display: hidden;
 }
 
 .sign img{
@@ -40,7 +55,7 @@
 }
 
 @media (max-width: 768px) {
-    .zodiac-wheel {
+    .zodiacWheel {
         position: relative;
         width: 500px; /* Tamanho do círculo */
         height: 500px;
@@ -52,7 +67,7 @@
         border: 3px solid #000;
     }
     
-    .zodiac-wheel::after{
+    .zodiacWheel::after{
         content: '';
         position: absolute;
         border: 3px solid #000;
@@ -83,7 +98,7 @@
 }
 
 @media (max-width: 480px) {
-    .zodiac-wheel {
+    .zodiacWheel {
         position: relative;
         width: 350px; /* Tamanho do círculo */
         height: 350px;
@@ -95,7 +110,7 @@
         border: 3px solid #000;
     }
     
-    .zodiac-wheel::after{
+    .zodiacWheel::after{
         content: '';
         position: absolute;
         border: 3px solid #000;

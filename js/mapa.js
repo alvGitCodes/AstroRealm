@@ -1,5 +1,6 @@
 // Selecionar o elemento onde será exibido o mapa
 const mapaWrapper = document.getElementById("mapaWrapper");
+const chart = document.getElementById("chart");
 const nomeUsuario = document.getElementById("nomeUsuario");
 const localNasc = document.getElementById("localNasc");
 const dataNasc = document.getElementById("dataNasc");
@@ -7,6 +8,17 @@ const sol = document.getElementById("sol");
 const lua = document.getElementById("lua");
 const mercurio = document.getElementById("mercurio");
 const venus = document.getElementById("venus");
+const marte = document.getElementById("marte");
+const jupiter = document.getElementById("jupiter");
+const saturno = document.getElementById("saturno");
+const urano = document.getElementById("urano");
+const netuno = document.getElementById("netuno");
+const plutao = document.getElementById("plutao");
+const northNode = document.getElementById("northNode");
+const chiron = document.getElementById("chiron");
+const ascendente = document.getElementById("ascendente");
+const mc = document.getElementById("mc");
+
 
 // Recuperar os dados do sessionStorage
 const nome = sessionStorage.getItem("nome");
@@ -15,7 +27,8 @@ const cidade = sessionStorage.getItem("cidade");
 const data = sessionStorage.getItem("data");
 const hora = sessionStorage.getItem("hora");
 
-
+//EXTRAS
+const meses = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro',]
 
 
 
@@ -59,11 +72,18 @@ async function getCoordinates(city, country) {
     }
 }
 
-// Função para chamar a API Astrologer
 async function fetchAstrologicalData() {
+    // Parse the date and time
     const { year, month, day, hour, minute } = parseDateAndTime(data, hora);
 
-    // Buscar latitude e longitude
+    // Adjust for Maceió's time zone (UTC-3)
+    const localDate = new Date(Date.UTC(year, month - 1, day, hour, minute)); // Create UTC date
+    localDate.setHours(localDate.getHours() + 3); // Add 3 hours to adjust to BRT (UTC -3)
+
+    // Log to verify adjusted time
+    console.log("Hora ajustada para BRT (UTC -3):", localDate.toISOString());
+
+    // Get coordinates
     const coordinates = await getCoordinates(cidade, pais);
 
     if (!coordinates) {
@@ -71,23 +91,24 @@ async function fetchAstrologicalData() {
         return;
     }
 
-    // Log para verificar os dados antes de enviar para a API
+    // Log to verify data before sending to API
     console.log("Dados enviados para a API:", {
         name: nome,
-        year,
-        month,
-        day,
-        hour,
-        minute,
+        year: localDate.getUTCFullYear(),
+        month: localDate.getUTCMonth() + 1, // months are 0-indexed
+        day: localDate.getUTCDate(),
+        hour: localDate.getUTCHours(),
+        minute: localDate.getUTCMinutes(),
         longitude: coordinates.longitude,
         latitude: coordinates.latitude,
         city: cidade,
         nation: pais,
-        timezone: "UTC",
+        timezone: "UTC", // The API will process everything in UTC
         zodiac_type: "Tropic",
     });
 
-    const url = "https://astrologer.p.rapidapi.com/api/v4/birth-data";
+    // API request
+    const url = "https://astrologer.p.rapidapi.com/api/v4/birth-chart";
     const options = {
         method: "POST",
         headers: {
@@ -98,28 +119,27 @@ async function fetchAstrologicalData() {
         body: JSON.stringify({
             subject: {
                 name: nome,
-                year: year,
-                month: month,
-                day: day,
-                hour: hour,
-                minute: minute,
+                year: localDate.getUTCFullYear(),
+                month: localDate.getUTCMonth() + 1, // months are 0-indexed
+                day: localDate.getUTCDate(),
+                hour: localDate.getUTCHours(),
+                minute: localDate.getUTCMinutes(),
                 longitude: coordinates.longitude,
                 latitude: coordinates.latitude,
                 city: cidade,
                 nation: pais,
-                timezone: "UTC", // Atualize com o fuso horário correto, se necessário
+                timezone: "UTC", // Ensure the API gets the data in UTC
                 zodiac_type: "Tropic",
             },
-            // "language": "PT"
+            "language": "PT"
         }),
     };
 
     try {
-        mapaWrapper.innerHTML = "<p>Gerando seu mapa astral...</p>";
-
+        // Start the request
         const response = await fetch(url, options);
 
-        // Log para verificar o status da resposta
+        // Check if the response is successful
         console.log("Status da resposta da API:", response.status);
 
         if (!response.ok) {
@@ -129,17 +149,14 @@ async function fetchAstrologicalData() {
         }
 
         const result = await response.json();
-
-        // Log para verificar a resposta da API
         console.log("Resposta da API:", result);
 
+        // Render the birth chart
         renderBirthChart(result);
     } catch (error) {
         console.error("Erro ao buscar dados da API:", error);
         mapaWrapper.innerHTML = "<p>Ocorreu um erro ao gerar o mapa astral. Tente novamente mais tarde.</p>";
     }
-
-    
 }
 
 // Função para renderizar o mapa astral
@@ -152,19 +169,30 @@ function renderBirthChart(dados) { //antigo data
         return;
     }
 
-    nomeUsuario.innerHTML = dados.data.name;
-    sol.innerHTML = 'Sol: ' + dados.data.sun.emoji + ' - Casa: ' + data.sun.house;
-    lua.innerHTML = 'Lua: - Casa:' + data.data.moon.house
-    mercurio.innerHTML = 'Mercúrio: ' + '- Casa:' + data.mercury.house
-    venus.innerHTML = 'Vênus: ' + '- Casa:' + data.venus.house
-
     
-    // <p><strong>Fase da Lua:</strong> ${data.lunar_phase.moon_phase_name} (${data.lunar_phase.moon_phase})</p>
+    localNasc.innerHTML = dados.data.city + ', ' + dados.data.nation + '.';
+    dataNasc.innerHTML = dados.data.day + ' de ' + meses[dados.data.month] + ' de ' + dados.data.year + ', ' + (dados.data.hour - 3) + ':' + dados.data.minute;
+    nomeUsuario.innerHTML = dados.data.name;
+    chart.innerHTML = dados.chart;
+    sol.innerHTML = dados.data.sun.emoji + 'Sol ' + dados.data.sun.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.sun.sign;
+    lua.innerHTML = dados.data.moon.emoji + 'Lua ' + dados.data.moon.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.moon.sign;
+    mercurio.innerHTML = dados.data.mercury.emoji + 'Mercúrio ' + dados.data.mercury.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.mercury.sign;
+    venus.innerHTML = dados.data.venus.emoji + 'Vênus ' + dados.data.venus.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.venus.sign;
+    marte.innerHTML = dados.data.mars.emoji + 'Marte ' + dados.data.mars.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.mars.sign;
+    jupiter.innerHTML = dados.data.jupiter.emoji + 'Júpiter ' + dados.data.jupiter.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.jupiter.sign;
+    saturno.innerHTML = dados.data.saturn.emoji + 'Saturno ' + dados.data.saturn.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.saturn.sign;
+    urano.innerHTML = dados.data.uranus.emoji + 'Urano ' + dados.data.uranus.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.uranus.sign;
+    netuno.innerHTML = dados.data.neptune.emoji + 'Netuno ' + dados.data.neptune.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.neptune.sign;
+    plutao.innerHTML = dados.data.pluto.emoji + 'Plutão ' + dados.data.pluto.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.pluto.sign;
+    northNode.innerHTML = dados.data.true_node.emoji + 'Nodo Norte ' + dados.data.true_node.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.true_node.sign;
+    chiron.innerHTML = dados.data.chiron.emoji + 'Chiron ' + dados.data.chiron.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.chiron.sign;
+    ascendente.innerHTML = dados.data.first_house.emoji + 'Ascendente ' + dados.data.first_house.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.first_house.sign;
+    mc.innerHTML = dados.data.tenth_house.emoji + 'MC ' + dados.data.tenth_house.position.toFixed(2).replace('.', '° ') + '\' em ' + dados.data.tenth_house.sign;
 
 
-// Log para verificar a renderização
-console.log("Mapa Astral Renderizado");
+    // Log para verificar a renderização
+    console.log("Mapa Astral Renderizado");
 }
 
 // Chamar a função principal
-// fetchAstrologicalData();
+fetchAstrologicalData();

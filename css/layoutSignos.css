@@ -67,8 +67,8 @@ body {
 
 /* Estilo geral para a seção de informações do signo */
 #infoSigno {
-    border: 3px dashed #9D3CF8;
-    border-radius: 10px;
+    /* border: 3px dashed #9D3CF8; */
+    /* border-radius: 10px; */
     margin: auto;
     margin-bottom: 50px;
 }

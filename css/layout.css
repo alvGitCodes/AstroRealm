@@ -207,6 +207,10 @@ body {
 }
 
 @media (max-width: 480px) {
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
     #logo {
         font-size: 2em;
     }

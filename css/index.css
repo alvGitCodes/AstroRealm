@@ -77,11 +77,19 @@ body {
 #cardVoador{
     /* border: 1px solid #4d48af; */
     margin-inline: auto;
-    margin-top: 60px;
-    width: max-content;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    margin-top: 90px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
 
+}
+
+.linhaTopo{
+    display: flex;
+    gap: 100px;
 }
 
 .cardTopo{
@@ -92,8 +100,21 @@ body {
     justify-content: center;
     align-items: center;
     padding: 0.5em;
-    margin: 0 5em 2em 5em;
+    margin-bottom: 2em;
     font-size: 1.2em;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.prev{
+    
+}
+
+.inco{
+    
+}
+
+.cardTopo:hover{
+    opacity: 0;
 }
 
 /* Botão "Criar Mapa Astral" */
