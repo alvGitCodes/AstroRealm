@@ -1,0 +1,146 @@
+/* General Styles */
+#banner {
+    background-color:rgb(255, 92, 16);
+    background-color: #00A2FF;
+}
+
+#divConteudo {
+    margin: auto;
+    margin-top: 100px;
+    width: 100%;
+    
+}
+
+#exibirSigno {
+    position: absolute;
+    border-bottom: 4px solid #000;
+    width: max-content;
+    font-size: 5em;
+    text-transform: capitalize;
+}
+
+.zodiacWheel {
+    position: relative;
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #000;
+}
+
+.zodiacWheel::after {
+    content: '';
+    position: absolute;
+    border: 3px solid #000;
+    border-radius: 50%;
+    width: 450px;
+    height: 450px;
+}
+
+.sign {
+    
+    position: absolute;
+    font-size: 4em;
+    cursor: pointer;
+    transition: 1.2s ease-in-out;
+    transform: rotate(var(--angle)) translate(305px) rotate(calc(-1 * var(--angle)));
+    transition: 1.2s ease-in-out;
+}
+
+.esconder{
+    display: hidden;
+}
+
+.sign img {
+    width: 1.2em;
+}
+
+#titleSigns {
+    position: relative;
+    margin: 0 auto;
+    width: max-content;
+    font-size: 2.7em;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+/* Mobile Breakpoint (max-width: 768px) */
+@media (max-width: 768px) {
+    .zodiacWheel {
+        width: 500px;
+        height: 500px;
+    }
+
+    .zodiacWheel::after {
+        width: 300px;
+        height: 300px;
+    }
+
+    .sign {
+        font-size: 3em;
+        transform: rotate(var(--angle)) translate(200px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .sign img {
+        width: 1em;
+    }
+
+    #titleSigns {
+        font-size: 2.2em;
+    }
+}
+
+/* Mobile Breakpoint (max-width: 480px) */
+@media (max-width: 480px) {
+    .zodiacWheel {
+        width: 350px;
+        height: 350px;
+    }
+
+    .zodiacWheel::after {
+        width: 200px;
+        height: 200px;
+    }
+
+    .sign {
+        font-size: 2.5em;
+        transform: rotate(var(--angle)) translate(140px) rotate(calc(-1 * var(--angle)));
+    }
+
+    .sign img {
+        width: 0.9em;
+    }
+
+    #titleSigns {
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+}
+@media (max-width: 350px) {
+    .zodiacWheel {
+        width: 300px; /* Reduced size for very small screens */
+        height: 300px;
+    }
+
+    .zodiacWheel::after {
+        width: 180px; /* Smaller circle inside */
+        height: 180px;
+    }
+
+    .sign {
+        font-size: 2em; /* Further reduced font size */
+        transform: rotate(var(--angle)) translate(120px) rotate(calc(-1 * var(--angle))); /* Adjusted positioning */
+    }
+
+    .sign img {
+        width: 0.8em; /* Even smaller icon size */
+    }
+
+    #titleSigns {
+        font-size: 1.8em;
+        letter-spacing: 1px; /* Reduced letter spacing for small screens */
+    }
+}

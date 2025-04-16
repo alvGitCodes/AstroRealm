@@ -1,0 +1,172 @@
+/* Reseta as margens e o preenchimento padrão */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* Estilo geral para o corpo da página */
+body {
+    color: #3a3c44;
+}
+
+/* Estilo geral para o conteúdo dos signos */
+#conteudoSignos {
+    padding-top: 50px;
+}
+
+/* Estilo do cabeçalho da página */
+#cabecalho {
+    margin-bottom: 100px;
+}
+
+/* Estilo para o título do signo */
+#tituloSign {
+    font-size: 4em;
+    align-content: flex-start;
+    padding-top: 25px;
+}
+
+/* Estilo para o ícone do signo (símbolo de Áries) */
+#divImageSign span {
+    font-size: 12em;
+}
+
+/* Estilo para a lista de características do signo */
+#listCharSigns {
+    margin-top: -140px;
+    list-style: none;
+    font-size: 1.5em;
+}
+
+/* Estilo para a lista de informações adicionais sobre o signo */
+.listaInfoSign {
+    width: 69%;
+    margin-inline: auto;
+    list-style: none;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+/* Estilo para os itens da lista de informações sobre o signo */
+.listaInfoSign li {
+    margin-bottom: 10px;
+}
+
+/* Título das seções de características positivas e negativas */
+.blockTitle {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    font-size: 2em;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #9D3CF8;
+    border-top: 3px dotted #9D3CF8;
+}
+
+/* Estilo geral para a seção de informações do signo */
+#infoSigno {
+    border: 3px dashed #9D3CF8;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+/* Estilo para a chamada do signo */
+#chamadaSigno {
+    font-size: 2em;
+    padding: 10px 10px 10px 50px;
+    border-bottom: 3px dashed #9D3CF8;
+}
+
+/* Estilos para os parágrafos */
+#infoSigno p {
+    margin: 20px auto;
+    width: 69%;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+#btnPrevisoes{
+    font-size: 1.2em;
+    font-weight: 500;
+    color: #fff;
+    background-color: #00A2FF;
+    border: none;
+    border-radius: 10px;
+    padding: .5em;
+    cursor: pointer;
+    margin-left: 2.5em;
+    margin-bottom: 10px;
+}
+
+/* Media Queries para dispositivos com largura máxima de 768px */
+@media (max-width: 768px) {
+    #tituloSign {
+        font-size: 2em;
+    }
+
+    #cabecalho {
+        margin-bottom: 50px;
+    }
+
+    #infoSigno p {
+        width: 80%;
+    }
+}
+
+/* Media Queries para dispositivos com largura máxima de 480px */
+@media (max-width: 480px) {
+    #tituloSign {
+        font-size: 2em;
+    }
+
+    #cabecalho {
+        margin-bottom: 50px;
+    }
+
+    #infoSigno p {
+        width: 80%;
+    }
+
+    #chamadaSigno {
+        font-size: 1.4em;
+    }
+
+    #divImageSign span {
+        font-size: 9em;
+    }
+
+    #listCharSigns {
+        margin-top: -80px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width:385px) {
+    #tituloSign {
+        font-size: 2em;
+    }
+
+    #cabecalho {
+        margin-bottom: 50px;
+    }
+
+    #infoSigno p {
+        width: 80%;
+    }
+
+    #chamadaSigno {
+        font-size: 1.4em;
+    }
+
+    #divImageSign span {
+        font-size: 6em;
+    }
+
+    #listCharSigns {
+        margin-top: -5px;
+        font-size: 1em;
+    }
+}

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css e js -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="js/index.js" defer></script>
+    <script src="js/login.js" defer></script>
+    <title>AstroRealm</title>
+</head>
+
+<body>
+    <div id="topo">
+        <nav class="menu menuIndex">
+            <div id="logo"><a href="index.html">Astro<span id="logoSpan">Realm</span></a></div>
+            <ul id="listaMenu">
+
+                <li class="menuItem"><a href="index.html" class="underline">Home</a></li>
+                <li class="menuItem"><a href="horoscopo.html">Horóscopo</a></li>
+
+                <!-- Menu Dropdown para Signos do Zodíaco -->
+                <li class="menuItem dropdown">
+                    <a href="signos.html">Zodíaco</a>
+                    <ul class="dropdown-content">
+                        <li><a href="signos/aries.html">Áries</a></li>
+                        <li><a href="signos/touro.html">Touro</a></li>
+                        <li><a href="signos/gemeos.html">Gêmeos</a></li>
+                        <li><a href="signos/cancer.html">Câncer</a></li>
+                        <li><a href="signos/leao.html">Leão</a></li>
+                        <li><a href="signos/virgem.html">Virgem</a></li>
+                        <li><a href="signos/libra.html">Libra</a></li>
+                        <li><a href="signos/escorpiao.html">Escorpião</a></li>
+                        <li><a href="signos/sagitario.html">Sagitário</a></li>
+                        <li><a href="signos/capricornio.html">Capricórnio</a></li>
+                        <li><a href="signos/aquario.html">Aquário</a></li>
+                        <li><a href="signos/peixes.html">Peixes</a></li>
+                    </ul>
+                </li>
+
+                <li class="menuItem"><a href="astrologia.html">Astrologia</a></li>
+                <li class="menuItem"><a href="meumapa.html">Meu Mapa</a></li>
+                <li class="menuItem"><a href="#" class="btnLogin-popup">Login</a></li>
+            </ul>
+        </nav>
+        <div id="textosCentro">
+            <div id="bemVindo">
+                Bem-Vindo(a) ao Astro Realm! <br>
+                <br> O melhor Site de Consultas Astrológicas do Brasil.
+            </div>
+
+            <div id="cardVoador">
+                <div class="linhaTopo">
+                    <div class="cardTopo">Mapas Astrais</div>
+                    <div class="cardTopo">Horóscopos</div>
+                </div>
+                <div class="linhaTopo">
+                    <div class="cardTopo prev">Previsões</div>
+                    <div class="cardTopo inco">Compatibilidade</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="divForm" class="hid">
+            <div id="formulario">
+                <h1>Crie Seu Mapa Astral</h1>
+                <div id="divNome">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="inputs inputNome">
+                </div>
+                <div id="divChartInfos">
+                    <div class="divInputs">
+                        <label for="pais">País de Origem</label>
+                        <input type="text" id="pais" name="pais" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="cidade">Cidade de Nascimento</label>
+                        <input type="text" id="cidade" name="cidade" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="data">Data de Nascimento</label>
+                        <input type="date" id="data" name="data" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="hora">Hora de Nascimento</label>
+                        <input type="time" id="hora" name="hora" class="inputs">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="criarMapaAstral">
+        <button id="btnMapa" class="btnIndex" aria-label="Criar meu mapa astral">Criar Meu Mapa</button>
+        <button id="btnConfirmar" class="btnIndex">Confirmar</button>
+    </div>
+
+    <div id="bot">
+        <div id="signGrid">
+            <div id="divTituloSignos">
+                <h1>Os Signos Do Zodíaco</h1>
+                <h3>Previsões para o seu signo</h3>
+            </div>
+
+            <div class="linhaSignos">
+
+                <a href="signos/aries.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/aries.png" alt="aries">
+                        <div class="nomeSign"><strong>Áries</strong></div>
+                        <div class="dataSign">mar 21 - abr 19</div>
+                    </div>
+                </a>
+
+                <a href="signos/touro.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/taurus.png" alt="touro">
+                        <div class="nomeSign"><strong>Touro</strong></div>
+                        <div class="dataSign">abr 20 - mai 20</div>
+                    </div>
+                </a>
+
+                <a href="signos/gemeos.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/gemini.png" alt="gemeos">
+                        <div class="nomeSign"><strong>Gêmeos</strong></div>
+                        <div class="dataSign">mai 21 - jun 20</div>
+                    </div>
+                </a>
+
+                <a href="signos/cancer.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/cancer.png" alt="cancer">
+                        <div class="nomeSign"><strong>Câncer</strong></div>
+                        <div class="dataSign">jun 21 - jul 22</div>
+                    </div>
+                </a>
+
+                <a href="signos/leao.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/leo.png" alt="leo">
+                        <div class="nomeSign"><strong>Leão</strong></div>
+                        <div class="dataSign">jul 23 - ago 22</div>
+                    </div>
+                </a>
+
+                <a href="signos/virgem.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/virgo.png" alt="virgo">
+                        <div class="nomeSign"><strong>Virgem</strong></div>
+                        <div class="dataSign">ago 23 - set 22</div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="linhaSignos">
+
+                <a href="signos/libra.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/libra.png" alt="libra">
+                        <div class="nomeSign"><strong>Libra</strong></div>
+                        <div class="dataSign">set 23 - out 22</div>
+                    </div>
+                </a>
+
+                <a href="signos/escorpiao.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/scorpio.png" alt="scorpio">
+                        <div class="nomeSign"><strong>Escorpião</strong></div>
+                        <div class="dataSign">out 23 - nov 21</div>
+                    </div>
+                </a>
+
+                <a href="signos/sagitario.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/sagittarius.png" alt="sagitario">
+                        <div class="nomeSign"><strong>Sagitário</strong></div>
+                        <div class="dataSign">nov 22 - dec 21</div>
+                    </div>
+                </a>
+
+                <a href="signos/capricornio.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/capricorn.png" alt="capricorn">
+                        <div class="nomeSign"><strong>Capricórnio</strong></div>
+                        <div class="dataSign">dec 22 - jan 19</div>
+                    </div>
+                </a>
+
+                <a href="signos/aquario.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/aquarius.png" alt="aquarius">
+                        <div class="nomeSign"><strong>Aquário</strong></div>
+                        <div class="dataSign">jan 20 - fev 18</div>
+                    </div>
+                </a>
+
+                <a href="signos/peixes.html">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/pisces_8377050.png" alt="pisces">
+                        <div class="nomeSign"><strong>Peixes</strong></div>
+                        <div class="dataSign">fev 19 - mar 20</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+
+        <div id="divHoroscopo">
+            <h2>Horóscopo</h2>
+            <div id="divHoroscopoCards">
+                <a href="horoscopo.html">
+                    <div class="cardHoroscopo diario">
+                        <div class="cardTitle">Horóscopo...</div>
+                        <div class="leiaMais">Leia Mais</div>
+                    </div>
+                </a>
+
+                <div class="cardHoroscopo semanal">
+                    <div class="cardTitle">Meu Mapa Astral...</div>
+                    <div class="leiaMais">Leia Mais</div>
+                </div>
+
+                <a href="astrologia.html">
+                    <div class="cardHoroscopo mensal">
+                        <div class="cardTitle">Astrologia...</div>
+                        <div class="leiaMais">Leia Mais</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <footer>
+        <div id="footerContent">
+
+            <div id="footerDivs">
+
+                <div id="logoWrapper">
+                    <div id="logoFooter">Astro<span id="spanFooter">Realm</span></div>
+                    <p>
+                        Descubra seu destino e conecte-se com o universo através da astrologia. <br>Explore os
+                        mistérios
+                        dos
+                        signos e muito mais!
+                    </p>
+                </div>
+
+                <div class="colunaFooter">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Email: contato@astrorealm.com</li>
+                        <li>Telefone: (11) 1234-5678</li>
+                        <li>
+                            <ul id="redesSociaisLinks">
+                                <li><a href="https://github.com/alvGitCodes"><img
+                                            src="imagens/icones footer/github_1051275.png" title="GitHub" alt="github">
+                                        <div>Github</div>
+                                    </a></li>
+                                <li><a href=""><img src="imagens/icones footer/linkedin_1051282.png" title="Linkedin"
+                                            alt="linkedin">LinkedIn</a></li>
+                                <li><a href=""><img src="imagens/icones footer/whatsapp_1051272.png" alt="">WhatsApp</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="colunaFooter">
+                    <h3>Recursos</h3>
+                    <ul class="reucursosLinks">
+                        <li><a href="https://freepik.com/">freepik.com</a></li>
+                        <li><a href="https://rapidapi.com/">Rapid Api</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="footerCredits">© 2024 AstroRealm. Todos os direitos reservados. Imagens por Freepik.</p>
+    </footer>
+
+    <div class="wrapper">
+        <img src="imagens/icones login/close.png" class="icon-close">
+        <div class="logreg-box">
+            <div class="form-box login">
+                <div class="logreg-title">
+                    <h2>Login</h2>
+                    <p>Por favor, faça login para aproveitar melhor nossa plataforma</p>
+                </div>
+
+                <div action="#">
+                    <div class="input-box">
+                        <img src="imagens/icones login/envelope-solid-24.png" class="icon">
+                        <input type="email" id="inputEmail" required>
+                        <label for="inputEmail">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/lock-alt-solid-24.png" class="icon">
+                        <input type="password" id="inputSenha" required>
+                        <label for="inputSenha">Senha</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input id="chkLembre" type="checkbox">
+                            Lembre-me</label>
+                        <a href="#">Esqueci a senha</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+
+                    <div class="logreg-link">
+                        <p>Não possui conta? <a href="#" class="register-link">Registrar</a></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-box register">
+                <div class="logreg-title">
+                    <h2>Registre-se</h2>
+                    <p>Por favor, forneça os dados corretos</p>
+                </div>
+
+                <div action="#"><!--Form-->
+                    <div class="input-box">
+                        <img src="imagens/icones login/user-solid-24.png" class="icon">
+                        <input type="text" id="inputNomeUser" required>
+                        <label for="inputNomeUser">Nome</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/envelope-solid-24.png" class="icon">
+                        <input type="email" id="inputEmailReg" required>
+                        <label for="inputEmailReg">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/lock-alt-solid-24.png" class="icon">
+                        <input type="password" id="inputSenhaReg" required>
+                        <label for="inputSenhaReg">Senha</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input id="chkConcordo" type="checkbox">
+                            Concordo</label>
+                        <a href="#">Esqueci a senha</a>
+                    </div>
+                    <button type="submit" id="btnReg" class="btn">Registrar</button>
+
+                    <div class="logreg-link">
+                        <p>Já possui conta? <a href="#" class="login-link">Logar</a></p>
+                    </div>
+
+                </div><!--Form-->
+            </div>
+        </div>
+
+        <div class="media-options">
+            <a href="#">
+                <img src="imagens/icones login/google.png">
+                <span>Login com o Google</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

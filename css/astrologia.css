@@ -1,0 +1,39 @@
+#banner {
+    background-color: rgb(77, 77, 77);
+    /* background-color: #00A2FF;
+    background-color: #9D3CF8; */
+}
+
+.blockAstrologia {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: justify;
+    font-size: 1.3em;
+    /* border: 2px solid #00A2FF; */
+    width: 80%;
+}
+
+p {
+    margin: 10px 0;
+}
+
+.lista {
+    margin-top: 10px;
+    padding-left: 60px;
+}
+
+.lista li {
+    margin: 20px 0;
+}
+
+hr {
+    margin: 20px;
+    width: 80%;
+}
+
+#simples {
+    border-left: solid gray 2px;
+    padding-left: 10px;
+    margin-left: 20px;
+}

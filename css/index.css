@@ -1,0 +1,382 @@
+/* Estilos Globais */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+body {
+    height: 100vh;
+}
+
+/* Seção Superior */
+#topo {
+    background-image: url(../imagens/backgrounds/backIndex.jpg);
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: black;
+    min-height: 70%;
+    width: 100%;
+}
+
+#img {
+    width: 100%;
+}
+
+/* Menu de Navegação */
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.2em;
+    width: 100%;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+}
+
+#listaMenu {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-weight: bold;
+    list-style: none;
+    width: 60%;
+}
+
+.listaItem a {
+    color: #fff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Texto Centralizado */
+#textosCentro {
+    /* position: relative;
+    top: 100px;
+    left: 25%; */
+    /* border: 1px solid #4d48af; */
+    margin-top: 90px;
+    color: #fff;
+    width: 100%;
+
+}
+
+#bemVindo {
+    text-align: center;
+    color: #fff;
+    font-size: 3em;
+}
+
+#cardVoador{
+    /* border: 1px solid #4d48af; */
+    margin-inline: auto;
+    margin-top: 90px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
+
+}
+
+.linhaTopo{
+    display: flex;
+    gap: 100px;
+}
+
+.cardTopo{
+    background-color: #ffffff27;
+    width: 200px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5em;
+    margin-bottom: 2em;
+    font-size: 1.2em;
+    transition: opacity 150ms ease-in-out;
+}
+
+.cardTopo:hover{
+    opacity: 0;
+}
+
+/* Botão "Criar Mapa Astral" */
+
+
+#divForm{
+    /* border: 2px solid #4d48af; */
+    text-align: center;
+    width: 50%;
+    margin-inline: auto;
+    margin-top: 70px;
+    display: none;
+}
+
+#formulario{
+    color: #fff;
+    display: flex;
+    flex-direction: column; 
+}
+
+#divNome{
+    margin-top: 100px;
+}
+
+#divChartInfos{
+    margin-top: 50px;
+    display: grid;
+    gap: 50px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.divInputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid #9733EE; */
+}
+
+label{
+    font-size: 2em;
+}
+
+.inputs{
+    border-bottom: 2px solid #00A2FF;
+    background: transparent;
+    width: 400px;
+    color: #00A2FF;
+    outline: none;
+    font-size: 1.5em;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.inputNome{
+    width: max-content;
+}
+
+#criarMapaAstral {
+    /* position: absolute;
+    top: 65.5%; */
+    margin-top: -28px;
+    text-align: center;
+    width: 100%;
+}
+
+#btnConfirmar{
+    display: none;
+    margin-inline: auto;
+}
+
+.btnIndex {
+    position: relative;
+    z-index: 3;
+    display: inline-block;
+    padding: 0.5em 1em;
+    border-radius: 50px;
+    color: #fff;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #DA22FF, #9733EE);
+    transition: background 0.3s ease-in-out;
+}
+
+.btnIndex::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 0;
+    height: 100%;
+    border-radius: 25px;
+    background: linear-gradient(to right, #ffee00, #ffc642);
+    transition: 150ms ease-in-out;
+}
+
+.btnIndex:hover::after {
+    width: 100%;
+}
+
+.btnIndex:hover {
+    color: #fff;
+}
+
+/* Grade de Signos */
+
+#signGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+#signGrid a {
+    color: #2e3036;
+    text-decoration: none;
+}
+
+#signGrid a:hover {
+    color: #2e3036;
+    text-decoration: underline;
+}
+
+#divTituloSignos {
+    text-align: center;
+    margin-bottom: -40px;
+}
+
+.linhaSignos {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    text-transform: capitalize;
+}
+
+.signos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+}
+
+.signos:hover {
+    background-color: rgba(157, 60, 248, 0.2);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.imgSignos {
+    width: 80px;
+    padding: 5px;
+}
+
+.dataSign {
+    font-weight: bold;
+}
+
+/* Horóscopo */
+#divHoroscopo {
+    text-align: center;
+    margin-bottom: 150px;
+    width: 100%;
+}
+
+#divHoroscopoCards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-inline: auto;
+    width: 100%;
+}
+
+#divHoroscopoCards a {
+    text-decoration: none;
+}
+
+.cardHoroscopo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px 15px;
+    margin: 0 10px;
+    width: 300px;
+    height: 130px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border-radius: 4px;
+    background-color: #9628d6;
+    cursor: pointer;
+}
+
+.cardTitle {
+    font-size: 1.5em;
+}
+
+.leiaMais {
+    font-size: 1.2em;
+}
+
+.leiaMais:hover {
+    text-decoration: underline;
+}
+
+.diario {
+    background-color: #586181;
+    background-image: url(../imagens/backgrounds/backSemanal.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.semanal {
+    background-color: #4d48af;
+    background-image: url(../imagens/backgrounds/backDiario.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.mensal {
+    background-color: #9980f1;
+    background-image: url(../imagens/backgrounds/backMensal.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.menuItem {
+    position: relative;
+}
+
+.menuItem a {
+    padding: 10px;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Telas pequenas (mobile) - max-width 481px */
+@media (max-width: 481px) {
+    #menu {
+        width: 100%;
+    }
+
+    #listaMenu {
+        width: 100%;
+    }
+}
+
+/* Telas médias (pequeno tablet) - max-width 600px */
+@media (max-width: 600px) {
+    #listaMenu {
+        width: 80%;
+    }
+
+    #signGrid {
+        margin-inline: 20px;
+    }
+}

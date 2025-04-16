@@ -1,0 +1,72 @@
+#mapaWrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* width: 1000px; */
+    margin: auto;
+    /* background-image: url(../imagens/backgrounds/v933-audi-35-e-compressed.jpg); */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#chart {
+    width: 1000px;
+    margin: auto;
+    /* border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #000; */
+}
+
+.divisoria {
+    font-size: 1.2em;
+    font-weight: bold;
+    position: relative;
+    margin: auto;
+    width: fit-content;
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+#infoUsuario{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#nomeUsuario{
+    font-size: 1.5em;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.infosExtras{
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.titles{
+    align-content: flex-start;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 1.2em;
+    border-bottom: 1px solid #ccc;
+}
+
+#planetas, #aspectos{
+    text-align:left;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+#aspectos{
+    margin-bottom: 100px
+}

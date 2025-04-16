@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+#conteudoHoroscopos{
+    width: 85%;
+    margin-inline: auto;
+    
+}
+
+#wrapperHoros{
+    margin-top: 50px;
+
+}
+
+#divTempo{
+    width: 50%;
+    /* margin: auto; */
+    /* border: 3px solid #00A2FF; */
+    border-radius: 10px;
+}
+
+#tituloTempo{
+    text-align: center;
+}
+
+#linhaTempos{
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    /* border: 1px solid #00A2FF; */
+    margin: 20px auto;
+}
+
+.labelTempo{
+    
+    border: 1px solid #ddd;
+    cursor: pointer;
+    width: 100px;
+    border-radius:5px;
+    text-align: center;
+    padding: 5px;
+    font-size: 1.2em;
+    background-color: #0066ff25;
+    background-color: #eee;
+}
+
+.selecionado{
+    border-top: 2px solid #00A2FF;
+    border-radius: 0 0 5px 5px;
+}
+
+#horoscopeDisplay{
+    font-weight: 600;
+    font-size: 1.5em;
+    text-align: justify;
+    margin-bottom: 50px;
+}
+
+#tituloDisplay{
+    
+    text-align: center;
+}

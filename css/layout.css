@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#logoSpan {
+    color: #00A2FF;
+}
+
+body {
+    background-color: transparent;
+    font-family: "Dosis", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: #2e3036;
+}
+
+#content {
+    width: 85%;
+    margin-inline: auto;
+    background-color: #fff;
+}
+
+#contato {
+    width: 100%;
+    height: 90px;
+    background-color: #101010;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: bold;
+    padding: 15px;
+    height: 95px;
+    width: 100%;
+}
+
+.menu a {
+    color: #101010;
+    text-decoration: none;
+}
+
+.menuIndex {
+    padding: 0;
+    padding-left: 150px;
+    margin-top: -15px;
+}
+
+.menuIndex a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4em;
+}
+
+#listaMenu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 1em;
+    padding-left: 150px;
+    margin-inline: auto;
+    list-style: none;
+    color: #101010;
+    width: 100%;
+}
+
+.underline {
+    position: relative;
+}
+
+.underline::after {
+    content: '';
+    position: absolute;
+    background-color: #00A2FF;
+    width: 100%;
+    height: 2px;
+    left: 0;
+    top: 85%;
+}
+
+#banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 10px;
+    height: 200px;
+    font-size: 5rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+#banner::before,
+#banner::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #101010;
+}
+
+#banner::before {
+    top: 0;
+}
+
+#banner::after {
+    top: 200px;
+}
+
+#titleSigns {
+    position: relative;
+    margin-inline: auto;
+    width: max-content;
+    font-size: 2.7em;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+#titleSigns::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: #000;
+}
+
+/* Estilos para o menu dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -500px;
+    top: 35px;
+    background-color: #fff;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 160px;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+}
+
+.dropdown-content li {
+    text-align: left;
+    padding: 10px 15px;
+    white-space: nowrap;
+}
+
+.dropdown-content li a {
+    color: #101010;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content li a:hover {
+    background-color: #eee;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+.menuItem {
+    font-size: 1.3em;
+    position: relative;
+}
+
+.menuItem a {
+    padding: 10px;
+}
+
+.menuItem>a:hover {
+    color: #00A2FF;
+}
+
+/* Media Queries */
+
+/* Para telas com 350px ou menos */
+@media (max-width: 350px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        padding: 10px;
+    }
+
+    #logo {
+        font-size: 2em;
+    }
+
+    #listaMenu {
+        flex-wrap: wrap;
+        font-size: 1em;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    #banner {
+        font-size: 1.8rem;
+        height: 120px;
+    }
+
+    #banner::after {
+        top: 120px;
+    }
+
+    #content {
+        width: 95%;
+    }
+
+    #titleSigns {
+        font-size: 1.8em;
+        letter-spacing: 1px;
+        /* Reduced letter spacing for small screens */
+    }
+}
+
+/* Para telas com 480px ou menos */
+@media (max-width: 480px) {
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    #logo {
+        font-size: 2.2em;
+    }
+
+    #listaMenu {
+        flex-wrap: wrap;
+        font-size: 1.1em;
+        justify-content: center;
+    }
+
+    #banner {
+        font-size: 2.2rem;
+        height: 130px;
+    }
+
+    #banner::after {
+        top: 130px;
+    }
+
+    #content {
+        width: 95%;
+    }
+
+    #titleSigns {
+        font-size: 2em;
+        letter-spacing: 2px;
+    }
+}
+
+/* Para telas com 750px ou menos */
+@media (max-width: 750px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    #logo {
+        font-size: 3em;
+    }
+
+    #listaMenu {
+        justify-content: center;
+        align-items: center;
+        gap: 1em;
+        padding-top: 10px;
+        padding-left: 0;
+    }
+
+    #banner {
+        font-size: 3.5rem;
+        height: 160px;
+    }
+
+    #banner::after {
+        top: 160px;
+    }
+
+    #content {
+        width: 90%;
+    }
+}
+
+/* Para telas com 768px ou menos (ajuste para um tamanho intermediário) */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+    }
+
+    #logo {
+        font-size: 2.5em;
+    }
+
+    #listaMenu {
+        justify-content: center;
+        align-items: center;
+        gap: 0.5em;
+        padding-top: 10px;
+        padding-left: 0;
+    }
+
+    #banner {
+        font-size: 3rem;
+        height: 150px;
+    }
+
+    #banner::after {
+        top: 150px;
+    }
+
+    #content {
+        width: 95%;
+    }
+
+    #titleSigns {
+        font-size: 2.2em;
+    }
+}

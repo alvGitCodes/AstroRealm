@@ -1,0 +1,209 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    background-color: #101010;
+    color: #fff;
+    padding: 20px 0;
+}
+
+#footerContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+#footerDivs {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#logoWrapper {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+#logoWrapper p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.7em;
+    text-align: center;
+    color: #ccc;
+}
+
+#logoFooter {
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+}
+
+#logoFooter span {
+    color: #00A2FF;
+}
+
+.colunaFooter h3 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #00A2FF;
+    width: max-content;
+}
+
+.colunaFooter p,
+.colunaFooter ul {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.colunaFooter ul {
+    list-style: none;
+}
+
+.colunaFooter li {
+    margin-bottom: 5px;
+}
+
+.colunaFooter a {
+    color: #ccc;
+}
+
+.footerCredits {
+    margin-inline: auto;
+    margin-top: 20px;
+    font-size: 0.7em;
+    color: #888;
+}
+
+#redesSociaisLinks {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+#redesSociaisLinks img {
+    width: 25px;
+}
+
+#redesSociaisLinks li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+}
+
+/* Media Query para telas de até 750px */
+@media (max-width: 750px) {
+    #footerContent {
+        font-size: 1em; /* Ajusta o tamanho da fonte */
+    }
+
+    #logoFooter {
+        font-size: 2em; /* Reduz o tamanho do logo */
+    }
+
+    .colunaFooter h3 {
+        font-size: 0.9em;
+    }
+
+    .footerCredits {
+        font-size: 0.8em;
+    }
+}
+
+/* Media Query para telas de até 480px */
+@media (max-width: 480px) {
+    #footerContent {
+        font-size: 0.9em; /* Reduz um pouco o tamanho da fonte */
+    }
+
+    
+    .colunaFooter h3 {
+        font-size: 0.8em;
+    }
+
+    .colunaFooter p,
+    .colunaFooter ul {
+        font-size: 0.8em;
+    }
+
+    #logoWrapper p {
+        font-size: 0.6em;
+    }
+
+    .footerCredits {
+        font-size: 0.7em;
+    }
+
+    #redesSociaisLinks img {
+        width: 20px; /* Reduz o tamanho dos ícones */
+    }
+
+    #redesSociaisLinks li a {
+        font-size: 0.7em;
+    }
+}
+
+/* Media Query para telas de até 350px */
+@media (max-width: 350px) {
+    #footerContent {
+        font-size: 0.8em; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    #footerDivs {
+       
+        padding: 0 10px;
+    }
+
+    .colunaFooter h3 {
+        font-size: 0.7em;
+    }
+
+    .colunaFooter p,
+    .colunaFooter ul {
+        font-size: 0.7em;
+    }
+
+    #logoFooter {
+        font-size: 1.5em; /* Reduz o tamanho do logo */
+    }
+
+    .footerCredits {
+        font-size: 0.6em;
+    }
+
+    #redesSociaisLinks {
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    #redesSociaisLinks img {
+        width: 20px; /* Reduz ainda mais o tamanho dos ícones */
+    }
+
+    #redesSociaisLinks li a {
+        font-size: 0.6em;
+    }
+
+    #logoWrapper {
+        width: 100%;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+
+    #logoWrapper p {
+        font-size: 0.5em;
+    }
+}
