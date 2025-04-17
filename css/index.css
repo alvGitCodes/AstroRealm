@@ -124,7 +124,7 @@ body {
 #formulario{
     color: #fff;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
 }
 
 #divNome{
@@ -151,18 +151,33 @@ label{
 }
 
 .inputs{
-    border-bottom: 2px solid #00A2FF;
+    /* border-bottom: 2px solid #00A2FF; */
+    border-bottom: 1px solid #fff;
     background: transparent;
     width: 400px;
-    color: #00A2FF;
+    color: #fff;
     outline: none;
     font-size: 1.5em;
-    border-radius: 4px;
+    /* border-radius: 4px; */
     text-align: center;
+}
+
+.inputs:focus{
+  border-color: #777777;  
 }
 
 .inputNome{
     width: max-content;
+}
+
+#data{
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+#pais option {
+    background-color: #1e1e1e;
+    color: #ffffff;
 }
 
 #criarMapaAstral {

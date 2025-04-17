@@ -104,7 +104,6 @@ async function getCoordinates(city, country) {
 
 async function fetchAstrologicalData() {
     // Parse the date and time
-    // Parse the date and time
     const { year, month, day, hour, minute } = parseDateAndTime(data, hora);
 
     // Adjust for Maceió's time zone (UTC-3)
@@ -123,14 +122,8 @@ async function fetchAstrologicalData() {
     }
 
     // Log to verify data before sending to API
-    // Log to verify data before sending to API
     console.log("Dados enviados para a API:", {
-        name: nome,
-        year: localDate.getUTCFullYear(),
-        month: localDate.getUTCMonth() + 1, // months are 0-indexed
-        day: localDate.getUTCDate(),
-        hour: localDate.getUTCHours(),
-        minute: localDate.getUTCMinutes(),
+        name: nome,        
         year: localDate.getUTCFullYear(),
         month: localDate.getUTCMonth() + 1, // months are 0-indexed
         day: localDate.getUTCDate(),
@@ -141,14 +134,12 @@ async function fetchAstrologicalData() {
         city: cidade,
         nation: pais,
         timezone: "UTC", // The API will process everything in UTC
-        timezone: "UTC", // The API will process everything in UTC
         zodiac_type: "Tropic",
     });
 
     // API request
     const url = "https://astrologer.p.rapidapi.com/api/v4/birth-chart";
-    // API request
-   
+       
     const options = {
         method: "POST",
         headers: {
@@ -164,16 +155,10 @@ async function fetchAstrologicalData() {
                 day: localDate.getUTCDate(),
                 hour: localDate.getUTCHours(),
                 minute: localDate.getUTCMinutes(),
-                year: localDate.getUTCFullYear(),
-                month: localDate.getUTCMonth() + 1, // months are 0-indexed
-                day: localDate.getUTCDate(),
-                hour: localDate.getUTCHours(),
-                minute: localDate.getUTCMinutes(),
                 longitude: coordinates.longitude,
                 latitude: coordinates.latitude,
                 city: cidade,
                 nation: pais,
-                timezone: "UTC", // Ensure the API gets the data in UTC
                 timezone: "UTC", // Ensure the API gets the data in UTC
                 zodiac_type: "Tropic",
             },
@@ -184,10 +169,8 @@ async function fetchAstrologicalData() {
 
     try {
         // Start the request
-        // Start the request
         const response = await fetch(url, options);
 
-        // Check if the response is successful
         // Check if the response is successful
         console.log("Status da resposta da API:", response.status);
 
@@ -265,12 +248,10 @@ function renderBirthChart(dados) { //antigo data
 
     // Log para verificar a renderização
     console.log("Mapa Astral Renderizado");
-    // Log para verificar a renderização
-    console.log("Mapa Astral Renderizado");
 }
 
 // Chamar a função principal
-// fetchAstrologicalData();
+//fetchAstrologicalData();
 
 const resultado = {
     "status": "OK",

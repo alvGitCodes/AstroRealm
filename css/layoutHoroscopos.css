@@ -14,12 +14,11 @@ body{
 #conteudoHoroscopos{
     width: 85%;
     margin-inline: auto;
-    
 }
 
 #wrapperHoros{
     margin-top: 50px;
-
+    
 }
 
 #divTempo{
@@ -27,6 +26,12 @@ body{
     /* margin: auto; */
     /* border: 3px solid #00A2FF; */
     border-radius: 10px;
+    box-shadow: 0 0 5px 1px #ccc;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
 
 #tituloTempo{
@@ -66,7 +71,6 @@ body{
     margin-bottom: 50px;
 }
 
-#tituloDisplay{
-    
+#tituloDisplay{    
     text-align: center;
 }

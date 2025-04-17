@@ -187,6 +187,29 @@ body {
     color: #00A2FF;
 }
 
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 100;
+    background-color: #00A2FF;
+    color: white;
+    border: none;
+    padding: 15px;
+    /* border-radius: 15px; */
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: none; /* escondido por padrão */
+    transition: opacity 0.3s ease;
+    height: 70px;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #028bdb;
+}
+
+
 /* Media Queries */
 
 /* Para telas com 350px ou menos */
