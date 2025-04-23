@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/footer.css">
 
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js" defer></script>
+
     <script src="js/cssGeral.js" defer></script>
 </head>
 
@@ -44,7 +47,7 @@
 
                     <li class="menuItem"><a href="astrologia.html" class="underline">Astrologia</a></li>
                     <li class="menuItem"><a href="meumapa.html">Meu Mapa</a></li>
-                    <li class="menuItem"><a href="" class="btnLogin-popup">Login</a></li>
+                    <li class="menuItem"><a href="#" class="btnLogin-popup">Login</a></li>
                 </ul>
             </nav>
             <div id="banner">
@@ -228,7 +231,93 @@
             <p class="footerCredits">© 2024 AstroRealm. Todos os direitos reservados. Imagens por Freepik.</p>
     </footer>
 
-    <button id="scrollToTopBtn" title="Voltar ao topo">⬆️</button>
+
+    <div class="wrapper">
+        <img src="imagens/icones login/close.png" class="icon-close">
+        <div class="logreg-box">
+            <div class="form-box login">
+                <div class="logreg-title">
+                    <h2>Login</h2>
+                    <p>Por favor, faça login para aproveitar melhor nossa plataforma</p>
+                </div>
+
+                <div action="#">
+                    <div class="input-box">
+                        <img src="imagens/icones login/envelope-solid-24.png" class="icon">
+                        <input type="email" id="inputEmail" required>
+                        <label for="inputEmail">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/lock-alt-solid-24.png" class="icon">
+                        <input type="password" id="inputSenha" required>
+                        <label for="inputSenha">Senha</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input id="chkLembre" type="checkbox">
+                            Lembre-me</label>
+                        <a href="#">Esqueci a senha</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+
+                    <div class="logreg-link">
+                        <p>Não possui conta? <a href="#" class="register-link">Registrar</a></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="form-box register">
+                <div class="logreg-title">
+                    <h2>Registre-se</h2>
+                    <p>Por favor, forneça os dados corretos</p>
+                </div>
+
+                <div action="#"><!--Form-->
+                    <div class="input-box">
+                        <img src="imagens/icones login/user-solid-24.png" class="icon">
+                        <input type="text" id="inputNomeUser" required>
+                        <label for="inputNomeUser">Nome</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/envelope-solid-24.png" class="icon">
+                        <input type="email" id="inputEmailReg" required>
+                        <label for="inputEmailReg">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/lock-alt-solid-24.png" class="icon">
+                        <input type="password" id="inputSenhaReg" required>
+                        <label for="inputSenhaReg">Senha</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input id="chkConcordo" type="checkbox">
+                            Concordo</label>
+                        <a href="#">Esqueci a senha</a>
+                    </div>
+                    <button type="submit" id="btnReg" class="btn">Registrar</button>
+
+                    <div class="logreg-link">
+                        <p>Já possui conta? <a href="#" class="login-link">Logar</a></p>
+                    </div>
+
+                </div><!--Form-->
+            </div>
+        </div>
+
+        <div class="media-options">
+            <a href="#">
+                <img src="imagens/icones login/google.png">
+                <span>Login com o Google</span>
+            </a>
+        </div>
+    </div>
+
+
+    <button id="scrollToTopBtn" title="Voltar ao topo">&#11205;</button>
     
 </body>
 

@@ -1,95 +1,46 @@
-/* Reseta as margens e o preenchimento padrão */
+/* RESET GERAL */
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
 }
 
-/* Estilo geral para o corpo da página */
+/* ESTILO GERAL DO BODY */
 body {
     color: #3a3c44;
 }
 
-/* Estilo geral para o conteúdo dos signos */
+/* CONTEÚDO PRINCIPAL */
 #conteudoSignos {
     padding-top: 50px;
 }
 
-/* Estilo do cabeçalho da página */
+/* TABELA DO CABEÇALHO */
 #cabecalho {
     margin-bottom: 100px;
 }
 
-/* Estilo para o título do signo */
+/* TÍTULO DO SIGNO */
 #tituloSign {
     font-size: 4em;
     align-content: flex-start;
     padding-top: 25px;
 }
 
-/* Estilo para o ícone do signo (símbolo de Áries) */
+/* ÍCONE DO SIGNO */
 #divImageSign span {
     font-size: 12em;
 }
 
-/* Estilo para a lista de características do signo */
+/* LISTA DE CARACTERÍSTICAS DO SIGNO */
 #listCharSigns {
     margin-top: -140px;
     list-style: none;
     font-size: 1.5em;
 }
 
-/* Estilo para a lista de informações adicionais sobre o signo */
-.listaInfoSign {
-    width: 69%;
-    margin-inline: auto;
-    list-style: none;
-    font-size: 1.5em;
-    text-align: justify;
-}
-
-/* Estilo para os itens da lista de informações sobre o signo */
-.listaInfoSign li {
-    margin-bottom: 10px;
-}
-
-/* Título das seções de características positivas e negativas */
-.blockTitle {
-    width: 70%;
-    text-align: center;
-    margin: auto;
-    font-size: 2em;
-    margin-top: 50px;
-    margin-bottom: 20px;
-    color: #9D3CF8;
-    border-top: 3px dotted #9D3CF8;
-}
-
-/* Estilo geral para a seção de informações do signo */
-#infoSigno {
-    border: 3px dashed #9D3CF8;
-    border-radius: 10px;
-    margin: auto;
-    margin-bottom: 50px;
-    /* width: 80%; */
-}
-
-/* Estilo para a chamada do signo */
-#chamadaSigno {
-    font-size: 2em;
-    padding: 10px 10px 10px 50px;
-    border-bottom: 3px dashed #9D3CF8;
-}
-
-/* Estilos para os parágrafos */
-#infoSigno p {
-    margin: 20px auto;
-    width: 69%;
-    font-size: 1.5em;
-    text-align: justify;
-}
-
-#btnPrevisoes{
+/* BOTÃO DE PREVISÕES */
+#btnPrevisoes {
     font-size: 1.2em;
     font-weight: 500;
     color: #fff;
@@ -102,7 +53,62 @@ body {
     margin-bottom: 10px;
 }
 
-/* Media Queries para dispositivos com largura máxima de 768px */
+/* SEÇÃO PRINCIPAL DE INFORMAÇÕES DO SIGNO */
+#infoSigno {
+    /* border: 3px dashed #9D3CF8; */
+    /* background-color: #9d3cf809; */
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+/* TÍTULO DENTRO DA SEÇÃO INFO */
+#chamadaSigno {
+    font-size: 2em;
+    padding: 10px 10px 10px 50px;
+    border-bottom: 3px dashed #9D3CF8;
+
+    /* border: 3px dashed #9D3CF8;
+    border-radius: 10px; */
+}
+
+/* PARÁGRAFOS GERAIS NA INFO DO SIGNO */
+#infoSigno p {
+    margin: 20px auto;
+    width: 69%;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+/* TÍTULOS DAS SEÇÕES INTERNAS */
+.blockTitle {
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    font-size: 2em;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #9D3CF8;
+    border-top: 3px dotted #9D3CF8;
+
+    /* border: 3px dotted #9D3CF8;
+    border-radius: 10px; */
+}
+
+/* LISTAS DE INFO POSITIVA, NEGATIVA, ETC. */
+.listaInfoSign {
+    width: 69%;
+    margin-inline: auto;
+    list-style: none;
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+.listaInfoSign li {
+    margin-bottom: 10px;
+}
+
+/* MEDIA QUERIES */
 @media (max-width: 768px) {
     #tituloSign {
         font-size: 2em;
@@ -117,7 +123,6 @@ body {
     }
 }
 
-/* Media Queries para dispositivos com largura máxima de 480px */
 @media (max-width: 480px) {
     #tituloSign {
         font-size: 2em;
@@ -145,7 +150,7 @@ body {
     }
 }
 
-@media (max-width:385px) {
+@media (max-width: 385px) {
     #tituloSign {
         font-size: 2em;
     }

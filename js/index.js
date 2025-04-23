@@ -40,3 +40,32 @@ btnConfirmar.addEventListener("click", () => {
     // Redirecionar para a página de exibição
     window.location.href = "meumapa.html";
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const paisDropdown = document.getElementById("paisDropdown");
+    const selectedOption = paisDropdown.querySelector(".selected-option");
+    const options = paisDropdown.querySelector(".options");
+    const inputPais = document.getElementById("pais");
+
+    paisDropdown.addEventListener("click", () => {
+        paisDropdown.classList.toggle("open");
+    });
+
+    options.querySelectorAll("li").forEach(option => {
+        option.addEventListener("click", () => {
+            const value = option.getAttribute("data-value");
+            const label = option.textContent;
+
+            selectedOption.textContent = label;
+            inputPais.value = value;
+            paisDropdown.classList.remove("open");
+        });
+    });
+
+    // Fecha ao clicar fora
+    document.addEventListener("click", (e) => {
+        if (!paisDropdown.contains(e.target)) {
+            paisDropdown.classList.remove("open");
+        }
+    });
+});

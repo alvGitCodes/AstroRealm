@@ -1,4 +1,6 @@
-/* Estilos Globais */
+/* ============================
+   ESTILOS GLOBAIS
+============================ */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,22 +12,25 @@ body {
     height: 100vh;
 }
 
-/* Seção Superior */
+
+/* ============================
+   TOPO / SEÇÃO SUPERIOR
+============================ */
 #topo {
-    background-image: url(../imagens/backgrounds/backIndex.jpg);
-    background-position: top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: black;
+    background: black url(../imagens/backgrounds/backIndex.jpg) top/cover no-repeat;
     min-height: 70%;
     width: 100%;
+    padding-bottom: 50px;
 }
 
 #img {
     width: 100%;
 }
 
-/* Menu de Navegação */
+
+/* ============================
+   MENU DE NAVEGAÇÃO
+============================ */
 #menu {
     display: flex;
     align-items: center;
@@ -44,28 +49,32 @@ body {
 #listaMenu {
     display: flex;
     justify-content: space-between;
-    color: #fff;
-    font-weight: bold;
     list-style: none;
+    font-weight: bold;
+    color: #fff;
     width: 60%;
 }
 
-.listaItem a {
+.listaItem a,
+.menuItem a {
     color: #fff;
-    cursor: pointer;
     text-decoration: none;
+    cursor: pointer;
+    padding: 10px;
 }
 
-/* Texto Centralizado */
+.menuItem {
+    position: relative;
+}
+
+
+/* ============================
+   TEXTO CENTRALIZADO
+============================ */
 #textosCentro {
-    /* position: relative;
-    top: 100px;
-    left: 25%; */
-    /* border: 1px solid #4d48af; */
     margin-top: 90px;
     color: #fff;
     width: 100%;
-
 }
 
 #bemVindo {
@@ -74,25 +83,25 @@ body {
     font-size: 3em;
 }
 
-#cardVoador{
-    /* border: 1px solid #4d48af; */
+
+/* ============================
+   CARDS SUPERIORES
+============================ */
+#cardVoador {
     margin-inline: auto;
     margin-top: 90px;
     width: 50%;
     display: flex;
     justify-content: center;
     flex-flow: row wrap;
-    /* display: grid;
-    grid-template-columns: 1fr 1fr; */
-
 }
 
-.linhaTopo{
+.linhaTopo {
     display: flex;
     gap: 100px;
 }
 
-.cardTopo{
+.cardTopo {
     background-color: #ffffff27;
     width: 200px;
     border-radius: 20px;
@@ -105,15 +114,15 @@ body {
     transition: opacity 150ms ease-in-out;
 }
 
-.cardTopo:hover{
+.cardTopo:hover {
     opacity: 0;
 }
 
-/* Botão "Criar Mapa Astral" */
 
-
-#divForm{
-    /* border: 2px solid #4d48af; */
+/* ============================
+   FORMULÁRIO DE MAPA ASTRAL
+============================ */
+#divForm {
     text-align: center;
     width: 50%;
     margin-inline: auto;
@@ -121,56 +130,53 @@ body {
     display: none;
 }
 
-#formulario{
+#formulario {
     color: #fff;
     display: flex;
     flex-direction: column;
 }
 
-#divNome{
+#divNome {
     margin-top: 100px;
 }
 
-#divChartInfos{
+#divChartInfos {
     margin-top: 50px;
     display: grid;
     gap: 50px;
     grid-template-columns: 1fr 1fr;
 }
 
-.divInputs{
+.divInputs {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* border: 1px solid #9733EE; */
 }
 
-label{
+label {
     font-size: 2em;
 }
 
-.inputs{
-    /* border-bottom: 2px solid #00A2FF; */
+.inputs {
     border-bottom: 1px solid #fff;
     background: transparent;
     width: 400px;
     color: #fff;
     outline: none;
     font-size: 1.5em;
-    /* border-radius: 4px; */
     text-align: center;
 }
 
-.inputs:focus{
-  border-color: #777777;  
+.inputs:focus {
+    border-color: #777777;
 }
 
-.inputNome{
+.inputNome {
     width: max-content;
 }
 
-#data{
+#data {
     text-transform: uppercase;
     letter-spacing: 10px;
 }
@@ -180,15 +186,17 @@ label{
     color: #ffffff;
 }
 
+
+/* ============================
+   BOTÕES
+============================ */
 #criarMapaAstral {
-    /* position: absolute;
-    top: 65.5%; */
     margin-top: -28px;
     text-align: center;
     width: 100%;
 }
 
-#btnConfirmar{
+#btnConfirmar {
     display: none;
     margin-inline: auto;
 }
@@ -229,17 +237,17 @@ label{
     color: #fff;
 }
 
-/* Grade de Signos */
 
+/* ============================
+   GRADE DE SIGNOS
+============================ */
 #signGrid {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 70px;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    margin-inline: auto;
+    margin: 150px auto;
     width: 100%;
 }
 
@@ -249,7 +257,6 @@ label{
 }
 
 #signGrid a:hover {
-    color: #2e3036;
     text-decoration: underline;
 }
 
@@ -260,7 +267,7 @@ label{
 
 .linhaSignos {
     display: flex;
-    flex-flow: row wrap;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 100px;
@@ -270,14 +277,13 @@ label{
 .signos {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 5px;
 }
 
 .signos:hover {
     background-color: rgba(157, 60, 248, 0.2);
-    padding: 5px;
     border-radius: 5px;
 }
 
@@ -290,7 +296,10 @@ label{
     font-weight: bold;
 }
 
-/* Horóscopo */
+
+/* ============================
+   HORÓSCOPO
+============================ */
 #divHoroscopo {
     text-align: center;
     margin-bottom: 150px;
@@ -299,8 +308,8 @@ label{
 
 #divHoroscopoCards {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     margin-top: 20px;
     margin-inline: auto;
     width: 100%;
@@ -340,52 +349,87 @@ label{
     text-decoration: underline;
 }
 
+/* Estilos para cada tipo de horóscopo */
 .diario {
-    background-color: #586181;
-    background-image: url(../imagens/backgrounds/backSemanal.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: #586181 url(../imagens/backgrounds/backSemanal.jpg) center/cover no-repeat;
 }
 
 .semanal {
-    background-color: #4d48af;
-    background-image: url(../imagens/backgrounds/backDiario.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: #4d48af url(../imagens/backgrounds/backDiario.jpg) center/cover no-repeat;
 }
 
 .mensal {
-    background-color: #9980f1;
-    background-image: url(../imagens/backgrounds/backMensal.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    background: #9980f1 url(../imagens/backgrounds/backMensal.jpg) center/cover no-repeat;
 }
 
-.menuItem {
+
+/* ============================
+   CUSTOM SELECT
+============================ */
+.custom-select-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 8px;
+    font-size: 1.5em;
+    color: white;
+}
+
+.custom-select {
+    background: transparent;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    padding: 0.5em;
     position: relative;
 }
 
-.menuItem a {
-    padding: 10px;
-    text-decoration: none;
-    color: #fff;
+.selected-option {
+    display: block;
+    pointer-events: none;
 }
 
-/* Telas pequenas (mobile) - max-width 481px */
-@media (max-width: 481px) {
-    #menu {
-        width: 100%;
-    }
+.options {
+    position: absolute;
+    top: 98%;
+    left: 0;
+    width: 100%;
+    max-height: 500px;
+    overflow-y: auto;
+    background-color: #1e1e1e;
+    border: 1px solid #555;
+    border-radius: 8px;
+    display: none;
+    z-index: 9999;
+}
 
+.options li {
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.options li:hover {
+    background-color: #444;
+}
+
+.options::-webkit-scrollbar {
+    display: none;
+}
+
+.custom-select.open .options {
+    display: block;
+}
+
+
+/* ============================
+   RESPONSIVIDADE
+============================ */
+@media (max-width: 481px) {
+    #menu,
     #listaMenu {
         width: 100%;
     }
 }
 
-/* Telas médias (pequeno tablet) - max-width 600px */
 @media (max-width: 600px) {
     #listaMenu {
         width: 80%;

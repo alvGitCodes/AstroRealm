@@ -3,7 +3,7 @@ const btn = document.getElementById('scrollToTopBtn');
 
 // Mostrar o botão quando a rolagem for maior que 300px
 window.onscroll = function () {
-    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
         btn.style.display = "block";
     } else {
         btn.style.display = "none";
