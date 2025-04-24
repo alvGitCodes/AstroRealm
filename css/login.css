@@ -4,8 +4,10 @@
     right: 0;
     width: 450px;
     height: 100%;
-    background-color: #00A2FF;
-    background-color: transparent;
+    background-color: #3eb8ffa1;
+    background-color: #9d3cf89f;
+    background-color: #0000006d;
+    /* background-color: transparent; */
     backdrop-filter: blur(15px);
     text-shadow: 0 0 10px rgb(58, 58, 58);
     box-shadow: -1px 0 10px rgba(0, 0, 0, .2);
@@ -19,12 +21,12 @@
     opacity: 0;
 }
 
-.wrapper.active-popup{
+.wrapper.active-popup {
     opacity: 1;
     z-index: 100;
 }
 
-.icon-close{
+.icon-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -40,19 +42,19 @@
     width: 100%;
 }
 
-.wrapper .form-box.login{
+.wrapper .form-box.login {
     display: block;
 }
 
-.wrapper.active .form-box.login{
+.wrapper.active .form-box.login {
     display: none;
 }
 
-.wrapper .form-box.register{
+.wrapper .form-box.register {
     display: none;
 }
 
-.wrapper.active .form-box.register{
+.wrapper.active .form-box.register {
     display: block;
 }
 
@@ -139,7 +141,7 @@
     text-decoration: underline;
 }
 
-.remember-forgot label{
+.remember-forgot label {
     font-size: 16px;
 }
 
@@ -203,7 +205,7 @@
 }
 
 .media-options a img {
-width: 25px;
+    width: 25px;
     margin: 0 8px 1.5px 0;
 }
 

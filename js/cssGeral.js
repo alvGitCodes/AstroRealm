@@ -1,9 +1,9 @@
 // Referência ao botão
 const btn = document.getElementById('scrollToTopBtn');
 
-// Mostrar o botão quando a rolagem for maior que 300px
+// Mostrar o botão quando a rolagem for maior que 1200px
 window.onscroll = function () {
-    if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
+    if (document.body.scrollTop > 1200 || document.documentElement.scrollTop > 1200) {
         btn.style.display = "block";
     } else {
         btn.style.display = "none";

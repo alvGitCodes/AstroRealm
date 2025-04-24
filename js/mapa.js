@@ -61,6 +61,20 @@ const icones = {
     "Pis": "♓︎"
 };
 
+const coresSignos = {
+    "Ari": "#FF5733",
+    "Tau": "#9ACD32",
+    "Gem": "#ADD8E6",
+    "Can": "#87CEFA",
+    "Leo": "#FFC300",
+    "Vir": "#A3C1AD",
+    "Lib": "#FFB6C1",
+    "Sco": "#6A0DAD",
+    "Sag": "#FF8C42",
+    "Cap": "#8B8680",
+    "Aqu": "#00CED1",
+    "Pis": "#B0E0E6"
+};
 
 // Logs para verificar os dados capturados
 console.log("Dados recuperados do sessionStorage:", { nome, pais, cidade, data, hora });
@@ -123,7 +137,7 @@ async function fetchAstrologicalData() {
 
     // Log to verify data before sending to API
     console.log("Dados enviados para a API:", {
-        name: nome,        
+        name: nome,
         year: localDate.getUTCFullYear(),
         month: localDate.getUTCMonth() + 1, // months are 0-indexed
         day: localDate.getUTCDate(),
@@ -139,11 +153,11 @@ async function fetchAstrologicalData() {
 
     // API request
     const url = "https://astrologer.p.rapidapi.com/api/v4/birth-chart";
-       
+
     const options = {
         method: "POST",
         headers: {
-            "x-rapidapi-key": "286fdd9722mshbc7e6eb99a38615p165fe4jsn9c4ddaf1b057", // Substitua por sua chave real
+            "x-rapidapi-key": "286fdd9722mshbc7e6eb99a38615p165fe4jsn9c4ddaf1b057", 
             "x-rapidapi-host": "astrologer.p.rapidapi.com",
             "Content-Type": "application/json",
         },
@@ -151,7 +165,7 @@ async function fetchAstrologicalData() {
             subject: {
                 name: nome,
                 year: localDate.getUTCFullYear(),
-                month: localDate.getUTCMonth() + 1, // months are 0-indexed
+                month: localDate.getUTCMonth() + 1, // meses são indexados em 0
                 day: localDate.getUTCDate(),
                 hour: localDate.getUTCHours(),
                 minute: localDate.getUTCMinutes(),
@@ -159,19 +173,18 @@ async function fetchAstrologicalData() {
                 latitude: coordinates.latitude,
                 city: cidade,
                 nation: pais,
-                timezone: "UTC", // Ensure the API gets the data in UTC
+                timezone: "UTC",
                 zodiac_type: "Tropic",
             },
             "language": "PT"
-           
+
         }),
     };
 
     try {
-        // Start the request
         const response = await fetch(url, options);
 
-        // Check if the response is successful
+        // Log para verificar o status da resposta
         console.log("Status da resposta da API:", response.status);
 
         if (!response.ok) {
@@ -182,9 +195,9 @@ async function fetchAstrologicalData() {
 
         const result = await response.json();
         console.log("Resposta da API:", result);
-        
-        
-        // Render the birth chart
+
+
+        // Rederizar o mapa astral
         renderBirthChart(result);
     } catch (error) {
         console.error("Erro ao buscar dados da API:", error);
@@ -202,49 +215,146 @@ function renderBirthChart(dados) { //antigo data
         return;
     }
 
-    
+
     localNasc.innerHTML = dados.data.city + ', ' + dados.data.nation + '.';
-    dataNasc.innerHTML = dados.data.day + ' de ' + meses[(dados.data.month)-1] + ' de ' + dados.data.year + ', ' + (dados.data.hour - 3) + ':' + dados.data.minute;
+    dataNasc.innerHTML = dados.data.day + ' de ' + meses[(dados.data.month) - 1] + ' de ' + dados.data.year + ', ' + (dados.data.hour - 3) + ':' + dados.data.minute;
     nomeUsuario.innerHTML = dados.data.name;
     chart.innerHTML = dados.chart;
 
     function decimalToDMS(decimal) {
         // Parte inteira do número é o grau
         const degrees = Math.floor(decimal);
-        
+
         // A parte decimal é a parte a ser convertida para minutos e segundos
         const decimalPart = decimal - degrees;
-        
+
         // Multiplica a parte decimal por 60 para obter os minutos
         const minutesFloat = decimalPart * 60;
         const minutes = Math.floor(minutesFloat);
-        
+
         // A parte decimal dos minutos é convertida para segundos
         const secondsFloat = (minutesFloat - minutes) * 60;
         const seconds = Math.round(secondsFloat);
-        
+
         // Retorna o valor formatado em graus, minutos e segundos
         return `${degrees}° ${minutes}′ ${seconds}″`;
     }
 
     const getNomeCompletoSigno = (abreviacao) => signos[abreviacao] || abreviacao;
-    const getSignoCerto = (icone) => icones[icone] || icone;
+    const getSignoCertoAntigo = (icone) => icones[icone] || icone;
+    const getSignoCerto = (sigla) => {
+        const icone = icones[sigla] || sigla;
+        const cor = coresSignos[sigla] || "#000000";
+        return `<span style="color:${cor};">${icone}</span>`;
+    };
+    // <span style="color:#;"></span>
+    // `<span style="color:#FF5733 ;">${getSignoCerto(dados.data.sun.sign)}</span>`
 
-    sol.innerHTML = '☉' + ' Sol ' + decimalToDMS(dados.data.sun.position) + ' em ' + getSignoCerto(dados.data.sun.sign) + ' ' + getNomeCompletoSigno(dados.data.sun.sign);
-    lua.innerHTML = '☽' + ' Lua ' + decimalToDMS(dados.data.moon.position) + ' em ' + getSignoCerto(dados.data.moon.sign) + ' ' + getNomeCompletoSigno(dados.data.moon.sign);
-    mercurio.innerHTML = '☿' + ' Mercúrio ' + decimalToDMS(dados.data.mercury.position) + ' em ' + getSignoCerto(dados.data.mercury.sign) + ' ' + getNomeCompletoSigno(dados.data.mercury.sign);
-    venus.innerHTML = '♀︎' + ' Vênus ' + decimalToDMS(dados.data.venus.position) + ' em ' + getSignoCerto(dados.data.venus.sign) + ' ' + getNomeCompletoSigno(dados.data.venus.sign);
-    marte.innerHTML = '♂︎' + ' Marte ' + decimalToDMS(dados.data.mars.position) + ' em ' + getSignoCerto(dados.data.mars.sign) + ' ' + getNomeCompletoSigno(dados.data.mars.sign);
-    jupiter.innerHTML = '♃' + ' Júpiter ' + decimalToDMS(dados.data.jupiter.position) + ' em ' + getSignoCerto(dados.data.jupiter.sign) + ' ' + getNomeCompletoSigno(dados.data.jupiter.sign);
-    saturno.innerHTML = '♄' + ' Saturno ' + decimalToDMS(dados.data.saturn.position) + ' em ' + getSignoCerto(dados.data.saturn.sign) + ' ' + getNomeCompletoSigno(dados.data.saturn.sign);
-    urano.innerHTML = '♅' + ' Urano ' + decimalToDMS(dados.data.uranus.position) + ' em ' + getSignoCerto(dados.data.uranus.sign) + ' ' + getNomeCompletoSigno(dados.data.uranus.sign);
-    netuno.innerHTML = '♆' + ' Netuno ' + decimalToDMS(dados.data.neptune.position) + ' em ' + getSignoCerto(dados.data.neptune.sign) + ' ' + getNomeCompletoSigno(dados.data.neptune.sign);
-    plutao.innerHTML = '♇' + ' Plutão ' + decimalToDMS(dados.data.pluto.position) + ' em ' + getSignoCerto(dados.data.pluto.sign) + ' ' + getNomeCompletoSigno(dados.data.pluto.sign);
-    northNode.innerHTML = '☊' + ' Nodo Norte ' + decimalToDMS(dados.data.true_node.position) + ' em ' + getSignoCerto(dados.data.true_node.sign) + ' ' + getNomeCompletoSigno(dados.data.true_node.sign);
-    chiron.innerHTML = '⚷' + ' Chiron ' + decimalToDMS(dados.data.chiron.position) + ' em ' + getSignoCerto(dados.data.chiron.sign) + ' ' + getNomeCompletoSigno(dados.data.chiron.sign);
-    ascendente.innerHTML = '♁' + ' Ascendente ' + decimalToDMS(dados.data.first_house.position) + ' em ' + getSignoCerto(dados.data.first_house.sign) + ' ' + getNomeCompletoSigno(dados.data.first_house.sign);
-    mc.innerHTML = '♁' + ' MC ' + decimalToDMS(dados.data.tenth_house.position) + ' em ' + getSignoCerto(dados.data.tenth_house.sign) + ' ' + getNomeCompletoSigno(dados.data.tenth_house.sign);
+    sol.innerHTML = '☉ Sol ' + decimalToDMS(dados.data.sun.position) + ' em ' + getSignoCerto(dados.data.sun.sign) + ' ' + getNomeCompletoSigno(dados.data.sun.sign);
+    lua.innerHTML = '☽ Lua ' + decimalToDMS(dados.data.moon.position) + ' em ' + getSignoCerto(dados.data.moon.sign) + ' ' + getNomeCompletoSigno(dados.data.moon.sign);
+    mercurio.innerHTML = '☿ Mercúrio ' + decimalToDMS(dados.data.mercury.position) + ' em ' + getSignoCerto(dados.data.mercury.sign) + ' ' + getNomeCompletoSigno(dados.data.mercury.sign);
+    venus.innerHTML = '♀︎ Vênus ' + decimalToDMS(dados.data.venus.position) + ' em ' + getSignoCerto(dados.data.venus.sign) + ' ' + getNomeCompletoSigno(dados.data.venus.sign);
+    marte.innerHTML = '♂︎ Marte ' + decimalToDMS(dados.data.mars.position) + ' em ' + getSignoCerto(dados.data.mars.sign) + ' ' + getNomeCompletoSigno(dados.data.mars.sign);
+    jupiter.innerHTML = '♃ Júpiter ' + decimalToDMS(dados.data.jupiter.position) + ' em ' + getSignoCerto(dados.data.jupiter.sign) + ' ' + getNomeCompletoSigno(dados.data.jupiter.sign);
+    saturno.innerHTML = '♄ Saturno ' + decimalToDMS(dados.data.saturn.position) + ' em ' + getSignoCerto(dados.data.saturn.sign) + ' ' + getNomeCompletoSigno(dados.data.saturn.sign);
+    urano.innerHTML = '♅ Urano ' + decimalToDMS(dados.data.uranus.position) + ' em ' + getSignoCerto(dados.data.uranus.sign) + ' ' + getNomeCompletoSigno(dados.data.uranus.sign);
+    netuno.innerHTML = '♆ Netuno ' + decimalToDMS(dados.data.neptune.position) + ' em ' + getSignoCerto(dados.data.neptune.sign) + ' ' + getNomeCompletoSigno(dados.data.neptune.sign);
+    plutao.innerHTML = '♇ Plutão ' + decimalToDMS(dados.data.pluto.position) + ' em ' + getSignoCerto(dados.data.pluto.sign) + ' ' + getNomeCompletoSigno(dados.data.pluto.sign);
+    northNode.innerHTML = '☊ Nodo Norte ' + decimalToDMS(dados.data.true_node.position) + ' em ' + getSignoCerto(dados.data.true_node.sign) + ' ' + getNomeCompletoSigno(dados.data.true_node.sign);
+    chiron.innerHTML = '⚷ Chiron ' + decimalToDMS(dados.data.chiron.position) + ' em ' + getSignoCerto(dados.data.chiron.sign) + ' ' + getNomeCompletoSigno(dados.data.chiron.sign);
+    ascendente.innerHTML = '♁ Ascendente ' + decimalToDMS(dados.data.first_house.position) + ' em ' + getSignoCerto(dados.data.first_house.sign) + ' ' + getNomeCompletoSigno(dados.data.first_house.sign);
+    mc.innerHTML = '♁ MC ' + decimalToDMS(dados.data.tenth_house.position) + ' em ' + getSignoCerto(dados.data.tenth_house.sign) + ' ' + getNomeCompletoSigno(dados.data.tenth_house.sign);
 
+
+
+    // ---------------------------------------------------------------------------------------
+    const traducoes = {
+        aspect: {
+            "conjunction": "Conjunção",
+            "opposition": "Oposição",
+            "trine": "Trígono",
+            "square": "Quadratura",
+            "sextile": "Sextil",
+            "quincunx": "Quincúncio",
+            "semisquare": "Semiquadratura",
+            "sesquiquadrate": "Sesquiquadratura",
+            "parallel": "Paralelo",
+            "contraparallel": "Contraparalelo",
+            "decile": "Décil",
+            "novile": "Novil",
+            "undecile": "Undécil",
+            "duodecile": "Duodécil",
+            "biquintile": "Biquintil",
+            "quintile": "Quíntil",
+            "sesquiquintile": "Sesquiquintil",
+            "tridecile": "Tridecíl"
+        },
+        planets: {
+            "Sun": "Sol",
+            "Moon": "Lua",
+            "Mercury": "Mercúrio",
+            "Venus": "Vênus",
+            "Mars": "Marte",
+            "Jupiter": "Júpiter",
+            "Saturn": "Saturno",
+            "Uranus": "Urano",
+            "Neptune": "Netuno",
+            "Pluto": "Plutão",
+            "Mean_North_Node": "Nodo Norte",
+            "Mean_Node": "Nodo Norte",
+            "Mean_South_Node": "Nodo Sul",
+            "Chiron": "Quíron",
+            "Ascendant": "Ascendente",
+            "MC": "Meio do Céu",
+            "Part of Fortune": "Parte da Fortuna",
+            "Lilith": "Lilith",
+            "Mean_Lilith": "Lilith Média",
+            "Vertex": "Vértice",
+            "Ceres": "Ceres",
+            "Pallas": "Palas",
+            "Juno": "Juno",
+            "Vesta": "Vesta",
+            "Eris": "Éris",
+            "Sedna": "Sedna"
+        }
+    };
+
+    // Função para traduzir aspectos e planetas
+    function traduzir(nome, tipo) {
+        if (tipo === "aspect" && traducoes.aspect[nome]) {
+            return traducoes.aspect[nome];
+        } else if (tipo === "planet" && traducoes.planets[nome]) {
+            return traducoes.planets[nome];
+        }
+        return nome; // Se não houver tradução, retorna o nome original
+    }
+
+    if (dados.aspects && Array.isArray(dados.aspects)) {
+        const aspectosContainer = document.getElementById("aspectos");
+        aspectosContainer.innerHTML = "";  // Limpar a div antes de adicionar os novos aspectos
+
+        dados.aspects.map(aspecto => {
+            // Criar um novo div para cada aspecto
+            const aspectoDiv = document.createElement("div");
+            aspectoDiv.classList.add("aspecto");
+
+            // Traduzir os nomes dos planetas e os aspectos
+            const p1Name = traduzir(aspecto.p1_name, "planet");
+            const p2Name = traduzir(aspecto.p2_name, "planet");
+            const aspectName = traduzir(aspecto.aspect, "aspect");
+
+            // Exemplo de como criar o conteúdo de cada aspecto
+            const descricao = `${p1Name} ${aspectName} ${p2Name} <span style="color:#9d3cf8;">orb ${aspecto.orbit.toFixed(0) + " °"}</span>`;
+            aspectoDiv.innerHTML = `${descricao}`;
+            // aspectoDiv.innerHTML = `<strong>${descricao}</strong>`;
+
+            // Adicionar a div do aspecto ao container
+            aspectosContainer.appendChild(aspectoDiv);
+        });
+    } else {
+        // Caso não tenha aspectos, exiba uma mensagem
+        document.getElementById("aspectos").innerHTML = "<p>Não há aspectos disponíveis para este mapa astral.</p>";
+    }
 
     // Log para verificar a renderização
     console.log("Mapa Astral Renderizado");

@@ -13,11 +13,42 @@ body {
 /* CONTEÚDO PRINCIPAL */
 #conteudoSignos {
     padding-top: 50px;
+    /* background-color: #9d3cf809; */
 }
 
 /* TABELA DO CABEÇALHO */
 #cabecalho {
     margin-bottom: 100px;
+    display: flex;
+    width: 100%;
+}
+
+/* ÍCONE DO SIGNO */
+#divImageSign{
+    padding-right: 40px;
+
+}
+
+#divImageSign span {
+    font-size: 12em;
+}
+
+/* CORES SIGNOS*/
+.fogo{
+    color: #FF5733;
+    color: #FFC300;
+}
+
+.terra{
+    color: #9ACD32;
+}
+
+.ar{
+    color: #ADD8E6 ;
+}
+
+.agua{
+    color: #87CEFA;
 }
 
 /* TÍTULO DO SIGNO */
@@ -27,10 +58,7 @@ body {
     padding-top: 25px;
 }
 
-/* ÍCONE DO SIGNO */
-#divImageSign span {
-    font-size: 12em;
-}
+
 
 /* LISTA DE CARACTERÍSTICAS DO SIGNO */
 #listCharSigns {
@@ -44,13 +72,18 @@ body {
     font-size: 1.2em;
     font-weight: 500;
     color: #fff;
-    background-color: #00A2FF;
+    background-color: #9d3cf8;
+    
     border: none;
     border-radius: 10px;
     padding: .5em;
     cursor: pointer;
     margin-left: 2.5em;
     margin-bottom: 10px;
+}
+
+#btnPrevisoes:hover{
+    background-color: #9d3cf894;
 }
 
 /* SEÇÃO PRINCIPAL DE INFORMAÇÕES DO SIGNO */
@@ -68,8 +101,8 @@ body {
     padding: 10px 10px 10px 50px;
     border-bottom: 3px dashed #9D3CF8;
 
-    /* border: 3px dashed #9D3CF8;
-    border-radius: 10px; */
+    border: 3px dashed #9D3CF8;
+    border-radius: 10px;
 }
 
 /* PARÁGRAFOS GERAIS NA INFO DO SIGNO */
@@ -91,8 +124,8 @@ body {
     color: #9D3CF8;
     border-top: 3px dotted #9D3CF8;
 
-    /* border: 3px dotted #9D3CF8;
-    border-radius: 10px; */
+    border: 3px dotted #9D3CF8;
+    border-radius: 10px;
 }
 
 /* LISTAS DE INFO POSITIVA, NEGATIVA, ETC. */

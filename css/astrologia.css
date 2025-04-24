@@ -45,3 +45,71 @@ hr {
     padding-left: 10px;
     margin-left: 20px;
 }
+
+
+/*----------------------------------------------------------*/
+#conteudoAstrologia {
+    max-width: 900px;
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    font-size: 1.2em;
+    color: #2e3036;
+}
+
+/* Bloco de conteúdo */
+#simples {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: justify;
+    line-height: 1.8;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#simples:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Parágrafos */
+#conteudoAstrologia p {
+    margin: 15px 0;
+}
+
+/* Títulos dentro do conteúdo */
+#conteudoAstrologia h2,
+#conteudoAstrologia h3,
+#conteudoAstrologia h4 {
+    margin-bottom: 10px;
+    color: #00A2FF;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Listas */
+#conteudoAstrologia .lista {
+    padding-left: 1.5rem;
+    list-style: disc;
+    list-style-position: inside;
+    margin-top: 10px;
+    border-left: 2px solid black;
+}
+
+#conteudoAstrologia .lista li {
+    margin: 10px 0;
+}
+
+/* Citações ou blocos destacados */
+#conteudoAstrologia #simples {
+    border-left: 4px solid #00A2FF;
+    background-color: #eef6fb;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: #333;
+}
