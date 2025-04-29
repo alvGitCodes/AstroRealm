@@ -58,8 +58,6 @@ body {
     padding-top: 25px;
 }
 
-
-
 /* LISTA DE CARACTERÍSTICAS DO SIGNO */
 #listCharSigns {
     margin-top: -140px;
@@ -86,6 +84,28 @@ body {
     background-color: #9d3cf894;
 }
 
+.btnPrevisoesBot{
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    font-size: 2em;
+    font-weight: 500;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #fff;
+    border: 1px dotted #fff;
+    border-radius: 10px;
+    background-color: #9D3CF8;
+    padding: 10px 0;
+}
+
+.btnPrevisoesBot:hover{
+    background-color: #9d3cf8da;
+}
+
+#conteudoSignos a{
+    text-decoration: none;
+}
 /* SEÇÃO PRINCIPAL DE INFORMAÇÕES DO SIGNO */
 #infoSigno {
     /* border: 3px dashed #9D3CF8; */
