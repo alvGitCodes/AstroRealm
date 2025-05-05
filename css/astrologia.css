@@ -1,10 +1,13 @@
 #banner {
-    background-color: rgb(47, 47, 47);
+    background-color: #68696b;
+    background-image: url(../imagens/backgrounds/fonte-de-galaxia-de-estilo-fantasia.jpg);
+    background-size: cover;
+    background-position: bottom;
     /* background-color: #00A2FF;
     background-color: #9D3CF8; */
 }
 
-#conteudoAstrologia{
+#conteudoAstrologia{    
     margin: auto;
     align-items: center;
     max-width: 900px;
@@ -25,6 +28,27 @@
     /* border: 2px solid #00A2FF; */
     width: 80%;
 }
+
+.imgBloco{
+    background-image: url(../imagens/backgrounds/fonte-de-galaxia-de-estilo-fantasia.jpg);
+    width: 100%;
+    height: 150px;
+    
+    background-size: cover;
+}
+
+#imgUm{
+    background-position:center;
+}
+
+#imgDois{
+    background-position:top;
+}
+
+#imgTres{
+    background-position:bottom;
+}
+
 #conteudoAstrologia p {
     margin: 10px 0;
 }
@@ -69,6 +93,11 @@ hr {
 #conteudoAstrologia h2,
 #conteudoAstrologia h3,
 #conteudoAstrologia h4 {
-    color: #00A2FF;
+
     font-weight: 600;
 }
+
+
+
+
+

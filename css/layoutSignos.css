@@ -13,7 +13,6 @@ body {
 /* CONTEÚDO PRINCIPAL */
 #conteudoSignos {
     padding-top: 50px;
-    /* background-color: #9d3cf809; */
 }
 
 /* TABELA DO CABEÇALHO */
@@ -21,33 +20,40 @@ body {
     margin-bottom: 100px;
     display: flex;
     width: 100%;
+
+    /* 
+    background: #f0f0ff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(248, 160, 60, 0.1); */
+
 }
 
 /* ÍCONE DO SIGNO */
-#divImageSign{
+#divImageSign {
     padding-right: 40px;
 
 }
 
 #divImageSign span {
     font-size: 12em;
+
 }
 
 /* CORES SIGNOS*/
-.fogo{
+.fogo {
     color: #FF5733;
     color: #FFC300;
 }
 
-.terra{
+.terra {
     color: #9ACD32;
 }
 
-.ar{
-    color: #ADD8E6 ;
+.ar {
+    color: #ADD8E6;
 }
 
-.agua{
+.agua {
     color: #87CEFA;
 }
 
@@ -56,13 +62,15 @@ body {
     font-size: 4em;
     align-content: flex-start;
     padding-top: 25px;
+    font-weight: bold;
+    /* color: #9d3cf8; */
 }
 
 /* LISTA DE CARACTERÍSTICAS DO SIGNO */
 #listCharSigns {
     margin-top: -140px;
     list-style: none;
-    font-size: 1.5em;
+    font-size: 1.2em;
 }
 
 /* BOTÃO DE PREVISÕES */
@@ -71,7 +79,7 @@ body {
     font-weight: 500;
     color: #fff;
     background-color: #9d3cf8;
-    
+
     border: none;
     border-radius: 10px;
     padding: .5em;
@@ -80,11 +88,11 @@ body {
     margin-bottom: 10px;
 }
 
-#btnPrevisoes:hover{
+#btnPrevisoes:hover {
     background-color: #9d3cf894;
 }
 
-.btnPrevisoesBot{
+.btnPrevisoesBot {
     width: 70%;
     text-align: center;
     margin: auto;
@@ -99,17 +107,19 @@ body {
     padding: 10px 0;
 }
 
-.btnPrevisoesBot:hover{
+.btnPrevisoesBot:hover {
     background-color: #9d3cf8da;
 }
 
-#conteudoSignos a{
+#conteudoSignos a {
     text-decoration: none;
 }
+
 /* SEÇÃO PRINCIPAL DE INFORMAÇÕES DO SIGNO */
 #infoSigno {
-    /* border: 3px dashed #9D3CF8; */
-    /* background-color: #9d3cf809; */
+    /* border: 3px dashed #9D3CF8; 
+    background-color: #9d3cf809;  */
+    
     border-radius: 10px;
     margin: auto;
     margin-bottom: 50px;

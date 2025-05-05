@@ -9,7 +9,7 @@
 }
 
 body {
-    height: 100vh;
+    width: 100%;
 }
 
 
@@ -161,7 +161,8 @@ label {
 .inputs {
     border-bottom: 1px solid #fff;
     background: transparent;
-    width: 400px;
+    max-width: 400px;
+    width: 100%;
     color: #fff;
     outline: none;
     font-size: 1.5em;
@@ -335,6 +336,7 @@ label {
     border-radius: 4px;
     background-color: #9628d6;
     cursor: pointer;
+    text-align: left;
 }
 
 .cardTitle {
@@ -423,19 +425,276 @@ label {
 /* ============================
    RESPONSIVIDADE
 ============================ */
-@media (max-width: 481px) {
-    #menu,
-    #listaMenu {
+@media (max-width: 480px) {
+    #topo {
+        background: black url(../imagens/backgrounds/backIndex.jpg);
+        background-size: 115%;
+        background-position: center;
+        background-repeat: no-repeat;
         width: 100%;
+        padding-bottom: 100px;
+        height: 365px;
     }
-}
 
-@media (max-width: 600px) {
-    #listaMenu {
-        width: 80%;
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+    }
+
+    .btnIndex .btnIndex::after {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        font-size: 1.2em;
+        padding: 0.5em 1em;
+    }
+
+    #textosCentro {
+        margin-top: 25px;
+    }
+
+    #bemVindo {
+        text-align: center;
+        color: #fff;
+        font-size: 1em;
+    }
+
+    #formulario {
+        font-size: 0.5em;
+        padding: 0px;
+    }
+
+    #divForm {
+        text-align: center;
+        width: 50%;
+        margin-inline: auto;
+        margin-top: 70px;
+        display: none;
+    }
+
+    #divNome {
+        margin-top: 100px;
+    }
+
+    #divChartInfos {
+        margin-top: 50px;
+        display: grid;
+        gap: 50px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .divInputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    label {
+        font-size: 2em;
+    }
+
+    .inputs {
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        width: 400px;
+        color: #fff;
+        outline: none;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .inputs:focus {
+        border-color: #777777;
+    }
+
+    .inputNome {
+        width: max-content;
+    }
+
+    #data {
+        text-transform: uppercase;
+        letter-spacing: 10px;
+    }
+
+    #pais option {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+
+    /* ============================
+       CARDS SUPERIORES
+    ============================ */
+    #cardVoador {
+        margin-inline: auto;
+        margin-top: 20px;
+        width: 50%;
+        display: none;
+
+    }
+
+    .cardHoroscopo {
+        width: 150px;
+        height: 80px;
+        font-size: 15px;
+        justify-content: center;
+    }
+
+    .semanal {
+        font-size: 12px;
     }
 
     #signGrid {
-        margin-inline: 20px;
+        margin-top: 70px;
+    }
+}
+
+@media (max-width: 360px) {
+    #topo {
+        background: black url(../imagens/backgrounds/backIndex.jpg);
+        background-size: 150%;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
+        /* padding-bottom: 100px; */
+        /* height: 365px; */
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        height: max-content;
+        font-size: 0.7em;
+    }
+
+    .btnIndex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25px;
+        font-size: 1em;
+        top: 15px;
+        margin: auto;
+    }
+
+    #btnConfirmar {
+        font-size: 1em;
+    }
+
+
+    #textosCentro {
+        margin-top: 20px;
+    }
+
+    #bemVindo {
+        text-align: center;
+        color: #fff;
+        font-size: 1em;
+    }
+
+    #formulario {
+        font-size: 0.5em;
+        padding: 0px;
+    }
+
+    #formulario h1 {
+        margin-top: -60px;
+        font-size: 1.8em;
+    }
+
+    #divForm {
+        text-align: center;
+        width: 50%;
+
+    }
+
+    #divNome {
+        margin-top: 10px;
+
+    }
+
+    #divChartInfos {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .divInputs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    label {
+        font-size: 1.5em;
+    }
+
+    .inputs {
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        width: 50px;
+        color: #fff;
+        outline: none;
+        font-size: 1.5em;
+        text-align: center;
+    }
+
+    .inputs:focus {
+        border-color: #777777;
+    }
+
+    .inputNome {
+        width: max-content;
+    }
+
+    #data {
+        text-transform: uppercase;
+        letter-spacing: 10px;
+    }
+
+    #pais option {
+        background-color: #1e1e1e;
+        color: #ffffff;
+    }
+
+    /* ============================
+       CARDS SUPERIORES
+    ============================ */
+    #cardVoador {
+        margin-inline: auto;
+        margin-top: 20px;
+        width: 50%;
+        display: none;
+
+    }
+
+    .cardHoroscopo {
+        width: 150px;
+        height: 80px;
+        font-size: 15px;
+        justify-content: center;
+    }
+
+    .semanal {
+        font-size: 10px;
+    }
+
+    #signGrid {
+        margin-top: 70px;
+    }
+
+    .linhaSignos {
+
+        gap: 90px;
+ 
+    }
+
+    .signos {
+        padding: px;
     }
 }

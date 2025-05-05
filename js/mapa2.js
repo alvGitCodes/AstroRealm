@@ -224,7 +224,7 @@ async function buscarDadosApi() {
         const response = await fetch("https://astrologer.p.rapidapi.com/api/v4/birth-chart", {
             method: "POST",
             headers: {
-                "x-rapidapi-key": "286fdd9722mshbc7e6eb99a38615p165fe4jsn9c4ddaf1b057",
+                "x-rapidapi-key": "5b16d2b17amsh6fbfe59609fd74bp140226jsn41be27e7e58b",
                 "x-rapidapi-host": "astrologer.p.rapidapi.com",
                 "Content-Type": "application/json"
             },
@@ -340,7 +340,7 @@ function renderizarMapaAstral(dados) {
 // =====================
 // EXECUÇÃO INICIAL
 // =====================
-//buscarDadosApi();
+// buscarDadosApi();
 
 const resultado = {
     "status": "OK",

@@ -1,54 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/layout.css">
-
-    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Entrar ou Registrar</title>
+    <link rel="stylesheet" href="css/login2.css" />
 </head>
 <body>
-    <div id="content">
-        <header>
-            <!-- <div id="contato"></div> -->
-            <nav class="menu">
-                <div id="logo"><a href="index.html">Astro<span id="logoSpan">Realm</span></a></div>
-                <ul id="listaMenu">
-                    <li class="menuItem"><a href="index.html">Home</a></li>
-                    <li class="menuItem"><a href="horoscopo.html">Horóscopo</a></li>
-    
-                    <!-- Menu Dropdown para Signos do Zodíaco -->
-                    <li class="menuItem dropdown">
-                        <a href="signos.html">Zodíaco</a>
-                        <ul class="dropdown-content">
-                            <li><a href="signos/aries.html">Áries</a></li>
-                            <li><a href="signos/touro.html">Touro</a></li>
-                            <li><a href="signos/gemeos.html">Gêmeos</a></li>
-                            <li><a href="signos/cancer.html">Câncer</a></li>
-                            <li><a href="signos/leao.html">Leão</a></li>
-                            <li><a href="signos/virgem.html">Virgem</a></li>
-                            <li><a href="signos/libra.html">Libra</a></li>
-                            <li><a href="signos/escorpiao.html">Escorpião</a></li>
-                            <li><a href="signos/sagitario.html">Sagitário</a></li>
-                            <li><a href="signos/capricornio.html">Capricórnio</a></li>
-                            <li><a href="signos/aquario.html">Aquário</a></li>
-                            <li><a href="signos/peixes.html">Peixes</a></li>
-                        </ul>
-                    </li>
-    
-                    <li class="menuItem"><a href="astrologia.html">Astrologia</a></li>
-                    <li class="menuItem"><a href="meumapa.html">Meu Mapa</a></li>
-                    <li class="menuItem"><a href="login.html" class="underline">Login</a></li>
-                </ul>
-            </nav>
-            
-        </header>
-
-
+    <div id="titulo">
+        <h1>Astro<span>Realm</span></h1>
     </div>
-
+    <div id="conteudo">
+        
+        <div class="form-container">
+            
+            <div class="toggle-buttons">
+                <button id="btnLogin" class="active">Login</button>
+                <button id="btnRegistro">Registrar</button>
+            </div>
     
+            <!-- Formulário de Login -->
+            <form id="formLogin" class="form active">
+                <h2>Entrar</h2>
+                <input type="email" placeholder="E-mail" required />
+                <input type="password" placeholder="Senha" required />
+                <button type="submit" class="btnIndex">Login</button>
+            </form>
+    
+            <!-- Formulário de Registro -->
+            <form id="formRegistro" class="form">
+                <h2>Registrar</h2>
+                <input type="text" placeholder="Nome completo" required />
+                <input type="email" placeholder="E-mail" required />
+                <input type="password" placeholder="Senha" required />
+                <input type="password" placeholder="Confirmar senha" required />
+                <button type="submit" class="btnIndex">Registrar</button>
+            </form>
+        </div>
+    </div>
+    
+
+    <script>
+        const btnLogin = document.getElementById("btnLogin");
+        const btnRegistro = document.getElementById("btnRegistro");
+        const formLogin = document.getElementById("formLogin");
+        const formRegistro = document.getElementById("formRegistro");
+
+        btnLogin.addEventListener("click", () => {
+            btnLogin.classList.add("active");
+            btnRegistro.classList.remove("active");
+            formLogin.classList.add("active");
+            formRegistro.classList.remove("active");
+        });
+
+        btnRegistro.addEventListener("click", () => {
+            btnRegistro.classList.add("active");
+            btnLogin.classList.remove("active");
+            formRegistro.classList.add("active");
+            formLogin.classList.remove("active");
+        });
+    </script>
 </body>
 </html>

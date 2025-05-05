@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;600&display=swap');
+
+body {
+    background: url(../imagens/backgrounds/tartilla.jpg) center/cover no-repeat;
+    font-family: 'Dosis', sans-serif;
+}
+
+#conteudo {
+    margin: 0; 
+    height: 100vh;
+    color: white;
+
+}
+
+#titulo {
+    font-size: 2em;
+    color: #fff;
+    text-align: center;
+}
+
+#titulo span {
+    color: #00A2FF;
+}
+
+.form-container {
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 2em;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 0 15px #000;
+}
+
+.toggle-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+
+.toggle-buttons button {
+    width: 49%;
+    padding: 0.8em;
+    border: none;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.toggle-buttons button.active {
+    background: linear-gradient(to right, #DA22FF, #9733EE);
+    background: linear-gradient(to right, #1b89e4, #42aaff);
+}
+
+.form {
+    display: none;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+.form.active {
+    display: flex;
+}
+
+input {
+    padding: 0.8em;
+    border: none;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+    color: white;
+    font-size: 1em;
+}
+
+input:focus {
+    outline: 1px solid #9733EE;
+}
+
+.btnIndex {
+    padding: 0.7em;
+    font-size: 1.2em;
+    background: linear-gradient(to right, #1b89e4, #42aaff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btnIndex:hover {
+    background: linear-gradient(to right, #1b89e4, #42aaff);
+    background: linear-gradient(to right, #DA22FF, #9733EE);
+    color: #fff;
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 1em;
+    }
+
+    .toggle-buttons button {
+        font-size: 1em;
+    }
+}

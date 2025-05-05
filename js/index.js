@@ -43,6 +43,7 @@ btnConfirmar.addEventListener("click", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     const paisDropdown = document.getElementById("paisDropdown");
+    console.log(paisDropdown);
     const selectedOption = paisDropdown.querySelector(".selected-option");
     const options = paisDropdown.querySelector(".options");
     const inputPais = document.getElementById("pais");
