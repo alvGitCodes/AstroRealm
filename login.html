@@ -1,44 +1,48 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entrar ou Registrar</title>
     <link rel="stylesheet" href="css/login2.css" />
 </head>
+
 <body>
     <div id="titulo">
-        <h1>Astro<span>Realm</span></h1>
+        <a href="index.html">
+            <h1>Astro<span>Realm</span></h1>
+        </a>
     </div>
     <div id="conteudo">
-        
+
         <div class="form-container">
-            
+
             <div class="toggle-buttons">
                 <button id="btnLogin" class="active">Login</button>
                 <button id="btnRegistro">Registrar</button>
             </div>
-    
+
             <!-- Formulário de Login -->
-            <form id="formLogin" class="form active">
+            <form id="formLogin" class="form active" action="php/login.php" method="POST">
                 <h2>Entrar</h2>
-                <input type="email" placeholder="E-mail" required />
-                <input type="password" placeholder="Senha" required />
+                <input type="email" name="email" placeholder="E-mail" required />
+                <input type="password" name="senha" placeholder="Senha" required />
                 <button type="submit" class="btnIndex">Login</button>
             </form>
-    
+
             <!-- Formulário de Registro -->
-            <form id="formRegistro" class="form">
+            <form id="formRegistro" class="form" action="php/registro.php" method="POST">
                 <h2>Registrar</h2>
-                <input type="text" placeholder="Nome completo" required />
-                <input type="email" placeholder="E-mail" required />
-                <input type="password" placeholder="Senha" required />
-                <input type="password" placeholder="Confirmar senha" required />
+                <input type="text" name="nome" placeholder="Nome completo" required />
+                <input type="email" name="email" placeholder="E-mail" required />
+                <input type="password" name="senha" placeholder="Senha" required />
+                <input type="password" name="confirma_senha" placeholder="Confirmar senha" required />
                 <button type="submit" class="btnIndex">Registrar</button>
             </form>
         </div>
     </div>
-    
+
 
     <script>
         const btnLogin = document.getElementById("btnLogin");
@@ -59,6 +63,18 @@
             formRegistro.classList.add("active");
             formLogin.classList.remove("active");
         });
+
+
+        formRegistro.addEventListener("submit", function (event) {
+            const senha = formRegistro.querySelector('input[name="senha"]').value;
+            const confirmaSenha = formRegistro.querySelector('input[name="confirma_senha"]').value;
+
+            if (senha !== confirmaSenha) {
+                event.preventDefault(); // impede o envio do formulário
+                alert("As senhas não coincidem!");
+            }
+        });
     </script>
 </body>
+
 </html>

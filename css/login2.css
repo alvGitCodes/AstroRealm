@@ -18,6 +18,11 @@ body {
     text-align: center;
 }
 
+#titulo a {
+    text-decoration: none;
+    color: #fff;
+}
+
 #titulo span {
     color: #00A2FF;
 }

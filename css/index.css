@@ -67,6 +67,59 @@ body {
     position: relative;
 }
 
+#divPerfil {
+    display: flex;
+
+
+    gap: 50px;
+    margin-left: auto;
+    padding: 10px;
+    padding-left: 20px;
+
+
+    backdrop-filter: blur(50px);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+    border-radius: 0px 0px 0px 15px;
+}
+
+#divPerfil a.usuario-logado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-decoration: none;
+    color: #fff;
+    /* cor do texto do nome */
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.3s;
+}
+
+#divPerfil a.usuario-logado:hover {
+    color: #ffd700;
+    /* destaque no hover */
+}
+
+#divPerfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+#divPerfil img:hover {
+    transform: scale(1.2);
+}
+
+#divInfoLogado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 
 /* ============================
    TEXTO CENTRALIZADO
@@ -554,7 +607,7 @@ label {
 @media (max-width: 360px) {
     #topo {
         background: black url(../imagens/backgrounds/backIndex.jpg);
-        background-size: 150%;
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         width: 100%;

@@ -2,6 +2,9 @@
 #banner {
     background-color:rgb(255, 92, 16);
     background-color: #00A2FF;
+    background-image: url(../imagens/backgrounds/cena-de-numerologia-mistica.jpg);
+    background-size: cover;
+    background-position: right;
 }
 
 #divConteudo {

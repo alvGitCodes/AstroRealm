@@ -76,6 +76,59 @@ body {
     width: 100%;
 }
 
+#divPerfil {
+    display: flex;
+
+
+    gap: 50px;
+    margin-left: auto;
+    padding: 10px;
+    padding-left: 20px;
+
+
+    backdrop-filter: blur(50px);
+
+
+}
+
+#divPerfil a.usuario-logado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    text-decoration: none;
+    color: #000;
+    /* cor do texto do nome */
+    font-weight: 600;
+    font-family: 'Arial', sans-serif;
+    transition: color 0.3s;
+}
+
+#divPerfil a.usuario-logado:hover {
+    color: #ffd700;
+    /* destaque no hover */
+}
+
+#divPerfil img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+#divPerfil img:hover {
+    transform: scale(1.2);
+}
+
+#divInfoLogado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
 .underline {
     position: relative;
 }
@@ -202,7 +255,8 @@ body {
     font-size: 20px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    display: none; /* escondido por padrão */
+    display: none;
+    /* escondido por padrão */
     transition: opacity 0.3s ease;
     height: 70px;
 }
@@ -215,7 +269,7 @@ body {
 /* Media Queries */
 
 /* Para telas com 350px ou menos */
-@media (max-width: 350px) {
+@media (max-width: 360px) {
     .menu {
         flex-direction: column;
         align-items: center;
@@ -244,7 +298,7 @@ body {
     }
 
     #content {
-        width: 95%;
+        width: 100%;
     }
 
     #titleSigns {

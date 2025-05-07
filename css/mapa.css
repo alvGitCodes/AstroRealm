@@ -1,5 +1,24 @@
-#content, body{
+#content, 
+body{
     background-color: #0f172a; /*cor do mapa dark*/
+}
+
+#divSalvar{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+
+}
+
+#salvarMapa{
+    border-radius: 8px;
+    background-color: #00A2FF;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1.2em;
+    font-weight: 500;
+    margin-left: auto;
 }
 
 .logoMapa a,
@@ -28,7 +47,7 @@
 }
 
 #chart {
-    width: 1000px;
+    max-width: 1000px;
     margin: auto;
 }
 

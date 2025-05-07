@@ -8,6 +8,9 @@
     /* background-color: rgb(204, 127, 255); */
     background-color: #00A2FF;
     background-color: #9D3CF8;
+    background-image: url(../imagens/backgrounds/backHoroscopo.jpg);
+    background-size: cover;
+    background-position: top;
 }
 
 /* Conteúdo Geral */

@@ -1,0 +1,626 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- css e js -->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/login.css">
+
+    <script src="js/index.js" defer></script>
+    <script src="js/login.js" defer></script>
+    <script src="js/cssGeral.js" defer></script>
+    <title>AstroRealm</title>
+</head>
+
+<body>
+    <!-- TOPO do site com o menu principal -->
+    <div id="topo">
+        <nav class="menu menuIndex">
+            <div id="logo"><a href="index.php">Astro<span id="logoSpan">Realm</span></a></div>
+            <!-- Lista de itens do menu de navegação -->
+            <ul id="listaMenu">
+                <li class="menuItem"><a href="index.php" class="underline">Home</a></li>
+                <li class="menuItem"><a href="horoscopo.php">Horóscopo</a></li>
+
+                <!-- Menu Dropdown para Signos do Zodíaco -->
+                <li class="menuItem dropdown">
+                    <a href="signos.php">Zodíaco</a>
+                    <ul class="dropdown-content">
+                    <li><a href="signos/aries.html">Áries</a></li>
+                        <li><a href="signos/touro.html">Touro</a></li>
+                        <li><a href="signos/gemeos.html">Gêmeos</a></li>
+                        <li><a href="signos/cancer.html">Câncer</a></li>
+                        <li><a href="signos/leao.html">Leão</a></li>
+                        <li><a href="signos/virgem.html">Virgem</a></li>
+                        <li><a href="signos/libra.html">Libra</a></li>
+                        <li><a href="signos/escorpiao.html">Escorpião</a></li>
+                        <li><a href="signos/sagitario.html">Sagitário</a></li>
+                        <li><a href="signos/capricornio.html">Capricórnio</a></li>
+                        <li><a href="signos/aquario.html">Aquário</a></li>
+                        <li><a href="signos/peixes.html">Peixes</a></li>
+                    </ul>
+                </li>
+
+                <li class="menuItem"><a href="astrologia.php">Astrologia</a></li>
+                <li class="menuItem"><a href="venda.html">Meu Mapa</a></li>
+                <li class="menuItem"></li>
+
+            </ul>
+
+            <div id="divPerfil">
+
+                <?php if (isset($_SESSION['usuario_nome'])): ?>
+
+                    <a href="perfil.php" class="usuario-logado">
+                        <img src="imagens/icones/mars.png" alt="Foto do Usuário">
+                        <div id="divInfoLogado">
+                            <span>Perfil</span>
+                            <span id="nomePerfil"><?php echo htmlspecialchars($_SESSION['usuario_nome']); ?></span>
+                            <a href="php/logout.php">Sair</a>
+                        </div>
+                    </a>
+
+                <?php else: ?>
+                    <a href="login.html">Login</a>
+                <?php endif; ?>
+            </div>
+
+
+
+        </nav>
+        <div id="textosCentro">
+            <div id="bemVindo">
+                Bem-Vindo(a) ao Astro Realm! <br>
+                <br> O melhor Site de Consultas Astrológicas do Brasil.
+            </div>
+
+            <div id="cardVoador">
+                <div class="linhaTopo">
+                    <div class="cardTopo">Mapas Astrais</div>
+                    <div class="cardTopo">Horóscopos</div>
+                </div>
+                <div class="linhaTopo">
+                    <div class="cardTopo prev">Previsões</div>
+                    <div class="cardTopo inco">Compatibilidade</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Formulário para criar o mapa astral -->
+        <div id="divForm" class="hid">
+            <div id="formulario">
+                <h1>Crie Seu Mapa Astral <br>Gratuito</h1>
+                <div id="divNome">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" class="inputs inputNome">
+                </div>
+                <div id="divChartInfos">
+                    <div class="divInputs">
+                        <label for="pais">País de Origem</label>
+
+                        <div class="custom-select-wrapper">
+                            <div class="custom-select" id="paisDropdown">
+                                <span class="selected-option">Selecione o país</span>
+                                <ul class="options">
+                                    <li data-value="BR">Brasil</li>
+                                    <li data-value="AF">Afeganistão</li>
+                                    <li data-value="ZA">África do Sul</li>
+                                    <li data-value="AL">Albânia</li>
+                                    <li data-value="DE">Alemanha</li>
+                                    <li data-value="AD">Andorra</li>
+                                    <li data-value="AO">Angola</li>
+                                    <li data-value="AG">Antígua e Barbuda</li>
+                                    <li data-value="SA">Arábia Saudita</li>
+                                    <li data-value="DZ">Argélia</li>
+                                    <li data-value="AR">Argentina</li>
+                                    <li data-value="AM">Armênia</li>
+                                    <li data-value="AU">Austrália</li>
+                                    <li data-value="AT">Áustria</li>
+                                    <li data-value="AZ">Azerbaijão</li>
+                                    <li data-value="BS">Bahamas</li>
+                                    <li data-value="BH">Bahrein</li>
+                                    <li data-value="BD">Bangladesh</li>
+                                    <li data-value="BB">Barbados</li>
+                                    <li data-value="BE">Bélgica</li>
+                                    <li data-value="BZ">Belize</li>
+                                    <li data-value="BJ">Benin</li>
+                                    <li data-value="BT">Butão</li>
+                                    <li data-value="BY">Bielorrússia</li>
+                                    <li data-value="BO">Bolívia</li>
+                                    <li data-value="BA">Bósnia e Herzegovina</li>
+                                    <li data-value="BW">Botsuana</li>
+                                    <li data-value="BN">Brunei</li>
+                                    <li data-value="BG">Bulgária</li>
+                                    <li data-value="BF">Burkina Faso</li>
+                                    <li data-value="BI">Burundi</li>
+                                    <li data-value="CV">Cabo Verde</li>
+                                    <li data-value="KH">Camboja</li>
+                                    <li data-value="CM">Camarões</li>
+                                    <li data-value="CA">Canadá</li>
+                                    <li data-value="QA">Catar</li>
+                                    <li data-value="KZ">Cazaquistão</li>
+                                    <li data-value="TD">Chade</li>
+                                    <li data-value="CL">Chile</li>
+                                    <li data-value="CN">China</li>
+                                    <li data-value="CY">Chipre</li>
+                                    <li data-value="CO">Colômbia</li>
+                                    <li data-value="KM">Comores</li>
+                                    <li data-value="CG">Congo (Brazzaville)</li>
+                                    <li data-value="CD">Congo (Kinshasa)</li>
+                                    <li data-value="KR">Coreia do Sul</li>
+                                    <li data-value="KP">Coreia do Norte</li>
+                                    <li data-value="CR">Costa Rica</li>
+                                    <li data-value="CI">Costa do Marfim</li>
+                                    <li data-value="HR">Croácia</li>
+                                    <li data-value="CU">Cuba</li>
+                                    <li data-value="DK">Dinamarca</li>
+                                    <li data-value="DJ">Djibuti</li>
+                                    <li data-value="DM">Dominica</li>
+                                    <li data-value="EG">Egito</li>
+                                    <li data-value="SV">El Salvador</li>
+                                    <li data-value="AE">Emirados Árabes Unidos</li>
+                                    <li data-value="EC">Equador</li>
+                                    <li data-value="ER">Eritreia</li>
+                                    <li data-value="SK">Eslováquia</li>
+                                    <li data-value="SI">Eslovênia</li>
+                                    <li data-value="ES">Espanha</li>
+                                    <li data-value="US">Estados Unidos</li>
+                                    <li data-value="EE">Estônia</li>
+                                    <li data-value="ET">Etiópia</li>
+                                    <li data-value="FJ">Fiji</li>
+                                    <li data-value="PH">Filipinas</li>
+                                    <li data-value="FI">Finlândia</li>
+                                    <li data-value="FR">França</li>
+                                    <li data-value="GA">Gabão</li>
+                                    <li data-value="GM">Gâmbia</li>
+                                    <li data-value="GH">Gana</li>
+                                    <li data-value="GE">Geórgia</li>
+                                    <li data-value="GD">Granada</li>
+                                    <li data-value="GR">Grécia</li>
+                                    <li data-value="GT">Guatemala</li>
+                                    <li data-value="GN">Guiné</li>
+                                    <li data-value="GW">Guiné-Bissau</li>
+                                    <li data-value="GQ">Guiné Equatorial</li>
+                                    <li data-value="GY">Guiana</li>
+                                    <li data-value="HT">Haiti</li>
+                                    <li data-value="HN">Honduras</li>
+                                    <li data-value="HU">Hungria</li>
+                                    <li data-value="YE">Iémen</li>
+                                    <li data-value="IN">Índia</li>
+                                    <li data-value="ID">Indonésia</li>
+                                    <li data-value="IR">Irã</li>
+                                    <li data-value="IQ">Iraque</li>
+                                    <li data-value="IE">Irlanda</li>
+                                    <li data-value="IS">Islândia</li>
+                                    <li data-value="IL">Israel</li>
+                                    <li data-value="IT">Itália</li>
+                                    <li data-value="JM">Jamaica</li>
+                                    <li data-value="JP">Japão</li>
+                                    <li data-value="JO">Jordânia</li>
+                                    <li data-value="KI">Kiribati</li>
+                                    <li data-value="KW">Kuwait</li>
+                                    <li data-value="LA">Laos</li>
+                                    <li data-value="LS">Lesoto</li>
+                                    <li data-value="LV">Letônia</li>
+                                    <li data-value="LB">Líbano</li>
+                                    <li data-value="LR">Libéria</li>
+                                    <li data-value="LY">Líbia</li>
+                                    <li data-value="LI">Liechtenstein</li>
+                                    <li data-value="LT">Lituânia</li>
+                                    <li data-value="LU">Luxemburgo</li>
+                                    <li data-value="MK">Macedônia do Norte</li>
+                                    <li data-value="MG">Madagáscar</li>
+                                    <li data-value="MY">Malásia</li>
+                                    <li data-value="MW">Malawi</li>
+                                    <li data-value="MV">Maldivas</li>
+                                    <li data-value="ML">Mali</li>
+                                    <li data-value="MT">Malta</li>
+                                    <li data-value="MA">Marrocos</li>
+                                    <li data-value="MH">Ilhas Marshall</li>
+                                    <li data-value="MR">Mauritânia</li>
+                                    <li data-value="MU">Maurício</li>
+                                    <li data-value="MX">México</li>
+                                    <li data-value="FM">Micronésia</li>
+                                    <li data-value="MD">Moldávia</li>
+                                    <li data-value="MC">Mônaco</li>
+                                    <li data-value="MN">Mongólia</li>
+                                    <li data-value="ME">Montenegro</li>
+                                    <li data-value="MZ">Moçambique</li>
+                                    <li data-value="MM">Mianmar</li>
+                                    <li data-value="NA">Namíbia</li>
+                                    <li data-value="NR">Nauru</li>
+                                    <li data-value="NP">Nepal</li>
+                                    <li data-value="NI">Nicarágua</li>
+                                    <li data-value="NE">Níger</li>
+                                    <li data-value="NG">Nigéria</li>
+                                    <li data-value="NO">Noruega</li>
+                                    <li data-value="NZ">Nova Zelândia</li>
+                                    <li data-value="OM">Omã</li>
+                                    <li data-value="NL">Países Baixos</li>
+                                    <li data-value="PK">Paquistão</li>
+                                    <li data-value="PW">Palau</li>
+                                    <li data-value="PA">Panamá</li>
+                                    <li data-value="PG">Papua-Nova Guiné</li>
+                                    <li data-value="PY">Paraguai</li>
+                                    <li data-value="PE">Peru</li>
+                                    <li data-value="PL">Polônia</li>
+                                    <li data-value="PT">Portugal</li>
+                                    <li data-value="KE">Quênia</li>
+                                    <li data-value="KG">Quirguistão</li>
+                                    <li data-value="GB">Reino Unido</li>
+                                    <li data-value="CF">República Centro-Africana</li>
+                                    <li data-value="CZ">República Tcheca</li>
+                                    <li data-value="DO">República Dominicana</li>
+                                    <li data-value="RO">Romênia</li>
+                                    <li data-value="RW">Ruanda</li>
+                                    <li data-value="RU">Rússia</li>
+                                    <li data-value="WS">Samoa</li>
+                                    <li data-value="LC">Santa Lúcia</li>
+                                    <li data-value="KN">São Cristóvão e Neves</li>
+                                    <li data-value="SM">San Marino</li>
+                                    <li data-value="ST">São Tomé e Príncipe</li>
+                                    <li data-value="VC">São Vicente e Granadinas</li>
+                                    <li data-value="SN">Senegal</li>
+                                    <li data-value="RS">Sérvia</li>
+                                    <li data-value="SC">Seychelles</li>
+                                    <li data-value="SL">Serra Leoa</li>
+                                    <li data-value="SG">Singapura</li>
+                                    <li data-value="SY">Síria</li>
+                                    <li data-value="SO">Somália</li>
+                                    <li data-value="LK">Sri Lanka</li>
+                                    <li data-value="SZ">Essuatíni</li>
+                                    <li data-value="SD">Sudão</li>
+                                    <li data-value="SS">Sudão do Sul</li>
+                                    <li data-value="SE">Suécia</li>
+                                    <li data-value="CH">Suíça</li>
+                                    <li data-value="SR">Suriname</li>
+                                    <li data-value="TH">Tailândia</li>
+                                    <li data-value="TZ">Tanzânia</li>
+                                    <li data-value="TJ">Tajiquistão</li>
+                                    <li data-value="TL">Timor-Leste</li>
+                                    <li data-value="TG">Togo</li>
+                                    <li data-value="TO">Tonga</li>
+                                    <li data-value="TT">Trinidad e Tobago</li>
+                                    <li data-value="TN">Tunísia</li>
+                                    <li data-value="TM">Turcomenistão</li>
+                                    <li data-value="TR">Turquia</li>
+                                    <li data-value="TV">Tuvalu</li>
+                                    <li data-value="UA">Ucrânia</li>
+                                    <li data-value="UG">Uganda</li>
+                                    <li data-value="UY">Uruguai</li>
+                                    <li data-value="UZ">Uzbequistão</li>
+                                    <li data-value="VU">Vanuatu</li>
+                                    <li data-value="VA">Vaticano</li>
+                                    <li data-value="VE">Venezuela</li>
+                                    <li data-value="VN">Vietnã</li>
+                                    <li data-value="ZM">Zâmbia</li>
+                                    <li data-value="ZW">Zimbábue</li>
+
+                                </ul>
+                            </div>
+                            <input type="hidden" name="pais" id="pais" />
+                            ⮟
+                        </div>
+                    </div>
+                    <!-- Campos de cidade, data e hora -->
+                    <div class="divInputs">
+                        <label for="cidade">Cidade de Nascimento</label>
+                        <input type="text" id="cidade" name="cidade" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="data">Data de Nascimento</label>
+                        <input type="date" id="data" name="data" class="inputs">
+                    </div>
+                    <div class="divInputs">
+                        <label for="hora">Hora de Nascimento</label>
+                        <input type="time" id="hora" name="hora" class="inputs">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Botões Criar Mapa -->
+    <div id="criarMapaAstral">
+        <button id="btnMapa" class="btnIndex" aria-label="Criar meu mapa astral">Criar Meu Mapa</button>
+        <button id="btnConfirmar" class="btnIndex">Confirmar</button>
+    </div>
+
+    <!-- Área principal do conteúdo abaixo do topo -->
+    <div id="bot">
+        <div id="signGrid">
+            <div id="divTituloSignos">
+                <h1>Os Signos Do Zodíaco</h1>
+                <h3>Previsões para o seu signo</h3>
+            </div>
+
+            <!-- Signos dispostos em linhas -->
+            <div class="linhaSignos">
+
+                <a href="signos/aries.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/aries.png" alt="aries">
+                        <div class="nomeSign"><strong>Áries</strong></div>
+                        <div class="dataSign">mar 21 - abr 19</div>
+                    </div>
+                </a>
+
+                <a href="signos/touro.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/taurus.png" alt="touro">
+                        <div class="nomeSign"><strong>Touro</strong></div>
+                        <div class="dataSign">abr 20 - mai 20</div>
+                    </div>
+                </a>
+
+                <a href="signos/gemeos.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/gemini.png" alt="gemeos">
+                        <div class="nomeSign"><strong>Gêmeos</strong></div>
+                        <div class="dataSign">mai 21 - jun 20</div>
+                    </div>
+                </a>
+
+                <a href="signos/cancer.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/cancer.png" alt="cancer">
+                        <div class="nomeSign"><strong>Câncer</strong></div>
+                        <div class="dataSign">jun 21 - jul 22</div>
+                    </div>
+                </a>
+
+                <a href="signos/leao.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/leo.png" alt="leo">
+                        <div class="nomeSign"><strong>Leão</strong></div>
+                        <div class="dataSign">jul 23 - ago 22</div>
+                    </div>
+                </a>
+
+                <a href="signos/virgem.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/virgo.png" alt="virgo">
+                        <div class="nomeSign"><strong>Virgem</strong></div>
+                        <div class="dataSign">ago 23 - set 22</div>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="linhaSignos">
+
+                <a href="signos/libra.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/libra.png" alt="libra">
+                        <div class="nomeSign"><strong>Libra</strong></div>
+                        <div class="dataSign">set 23 - out 22</div>
+                    </div>
+                </a>
+
+                <a href="signos/escorpiao.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/scorpio.png" alt="scorpio">
+                        <div class="nomeSign"><strong>Escorpião</strong></div>
+                        <div class="dataSign">out 23 - nov 21</div>
+                    </div>
+                </a>
+
+                <a href="signos/sagitario.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/sagittarius.png" alt="sagitario">
+                        <div class="nomeSign"><strong>Sagitário</strong></div>
+                        <div class="dataSign">nov 22 - dec 21</div>
+                    </div>
+                </a>
+
+                <a href="signos/capricornio.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/capricorn.png" alt="capricorn">
+                        <div class="nomeSign"><strong>Capricórnio</strong></div>
+                        <div class="dataSign">dec 22 - jan 19</div>
+                    </div>
+                </a>
+
+                <a href="signos/aquario.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/aquarius.png" alt="aquarius">
+                        <div class="nomeSign"><strong>Aquário</strong></div>
+                        <div class="dataSign">jan 20 - fev 18</div>
+                    </div>
+                </a>
+
+                <a href="signos/peixes.php">
+                    <div class="signos">
+                        <img class="imgSignos" src="imagens/icones zodiaco/pisces_8377050.png" alt="pisces">
+                        <div class="nomeSign"><strong>Peixes</strong></div>
+                        <div class="dataSign">fev 19 - mar 20</div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+        <!-- Seção de horóscopos -->
+        <div id="divHoroscopo">
+            <h2>Horóscopo</h2>
+            <div id="divHoroscopoCards">
+                <a href="horoscopo.php">
+                    <div class="cardHoroscopo diario">
+                        <div class="cardTitle">Horóscopo...</div>
+                        <div class="leiaMais">Leia Mais</div>
+                    </div>
+                </a>
+
+                <div class="cardHoroscopo semanal">
+                    <div class="cardTitle">Meu Mapa Astral...</div>
+                    <div class="leiaMais">Leia Mais</div>
+                </div>
+
+                <a href="astrologia.php">
+                    <div class="cardHoroscopo mensal">
+                        <div class="cardTitle">Astrologia...</div>
+                        <div class="leiaMais">Leia Mais</div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- Rodapé da página -->
+    <footer>
+        <div id="footerContent">
+
+            <div id="footerDivs">
+
+                <div id="logoWrapper">
+                    <div id="logoFooter">Astro<span id="spanFooter">Realm</span></div>
+                    <p>
+                        Descubra seu destino e conecte-se com o universo através da astrologia. <br>Explore os
+                        mistérios
+                        dos
+                        signos e muito mais!
+                    </p>
+                </div>
+
+                <div class="colunaFooter">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Email: contato@astrorealm.com</li>
+                        <li>Telefone: (11) 1234-5678</li>
+                        <li>
+                            <ul id="redesSociaisLinks">
+                                <li><a href="https://github.com/alvGitCodes"><img
+                                            src="imagens/icones footer/github_1051275.png" title="GitHub" alt="github">
+                                        <div>Github</div>
+                                    </a></li>
+                                <li><a href=""><img src="imagens/icones footer/linkedin_1051282.png" title="Linkedin"
+                                            alt="linkedin">LinkedIn</a></li>
+                                <li><a href=""><img src="imagens/icones footer/whatsapp_1051272.png" alt="">WhatsApp</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="colunaFooter">
+                    <h3>Recursos</h3>
+                    <ul class="reucursosLinks">
+                        <li><a href="https://freepik.com/">Freepik</a></li>
+                        <li><a href="https://rapidapi.com/">Rapid Api</a></li>
+                        <li><a href="https://rapidapi.com/gbattaglia/api/astrologer">Astrologer</a></li>
+                        <li><a href="https://rapidapi.com/ashutosh.devil7/api/horoscope19">Horoscope</a></li>
+                        <li><a href="https://rapidapi.com/gatzuma/api/deep-translate1">Deep Translate</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="footerCredits">© 2024 AstroRealm. Todos os direitos reservados. Imagens por Freepik.</p>
+    </footer>
+
+    <!-- Popup de Login/Registro -->
+    <div class="wrapper">
+        <img src="imagens/icones login/close.png" class="icon-close">
+        <div class="logreg-box">
+            <!-- Formulário de Login -->
+            <div class="form-box login">
+                <div class="logreg-title">
+                    <h2>Login</h2>
+                    <p>Por favor, faça login para aproveitar melhor nossa plataforma</p>
+                </div>
+
+                <div action="#">
+                    <div class="input-box">
+                        <img src="imagens/icones login/envelope-solid-24.png" class="icon">
+                        <input type="email" id="inputEmail" required>
+                        <label for="inputEmail">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/lock-alt-solid-24.png" class="icon">
+                        <input type="password" id="inputSenha" required>
+                        <label for="inputSenha">Senha</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input id="chkLembre" type="checkbox">
+                            Lembre-me</label>
+                        <a href="#">Esqueci a senha</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+
+                    <div class="logreg-link">
+                        <p>Não possui conta? <a href="#" class="register-link">Registrar</a></p>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Formulário de Registro -->
+            <div class="form-box register">
+                <div class="logreg-title">
+                    <h2>Registre-se</h2>
+                    <p>Por favor, forneça os dados corretos</p>
+                </div>
+
+                <div action="#"><!--Form-->
+                    <div class="input-box">
+                        <img src="imagens/icones login/user-solid-24.png" class="icon">
+                        <input type="text" id="inputNomeUser" required>
+                        <label for="inputNomeUser">Nome</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/envelope-solid-24.png" class="icon">
+                        <input type="email" id="inputEmailReg" required>
+                        <label for="inputEmailReg">Email</label>
+                    </div>
+
+                    <div class="input-box">
+                        <img src="imagens/icones login/lock-alt-solid-24.png" class="icon">
+                        <input type="password" id="inputSenhaReg" required>
+                        <label for="inputSenhaReg">Senha</label>
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label><input id="chkConcordo" type="checkbox">
+                            Concordo</label>
+                        <a href="#">Esqueci a senha</a>
+                    </div>
+                    <button type="submit" id="btnReg" class="btn">Registrar</button>
+
+                    <div class="logreg-link">
+                        <p>Já possui conta? <a href="#" class="login-link">Logar</a></p>
+                    </div>
+
+                </div><!--Form-->
+            </div>
+        </div>
+
+        <div class="media-options">
+            <a href="#">
+                <img src="imagens/icones login/google.png">
+                <span>Login com o Google</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Botão de voltar ao topo -->
+    <button id="scrollToTopBtn" title="Voltar ao topo">&#11205;</button>
+</body>
+
+</html>

@@ -34,5 +34,5 @@ btnGerarGratis.addEventListener("click", () => {
     console.log("Dados salvos no sessionStorage.");
 
     // Redirecionar para a página de exibição
-    window.location.href = "meumapa.html";
+    window.location.href = "meumapa.php";
 });

@@ -1,0 +1,266 @@
+<?php
+session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroRealm: Astrologia</title>
+
+    <link rel="stylesheet" href="css/astrologia.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/login.css">
+    <script src="js/login.js" defer></script>
+
+    <script src="js/cssGeral.js" defer></script>
+</head>
+
+<body>
+    <div id="content">
+        <header>
+            <!-- <div id="contato"></div> -->
+            <nav class="menu">
+                <div id="logo"><a href="index.php">Astro<span id="logoSpan">Realm</span></a></div>
+                <ul id="listaMenu">
+                    <li class="menuItem"><a href="index.php">Home</a></li>
+                    <li class="menuItem"><a href="horoscopo.php">Horóscopo</a></li>
+
+                    <!-- Menu Dropdown para Signos do Zodíaco -->
+                    <li class="menuItem dropdown">
+                        <a href="signos.php">Zodíaco</a>
+                        <ul class="dropdown-content">
+                            <li><a href="signos/aries.html">Áries</a></li>
+                            <li><a href="signos/touro.html">Touro</a></li>
+                            <li><a href="signos/gemeos.html">Gêmeos</a></li>
+                            <li><a href="signos/cancer.html">Câncer</a></li>
+                            <li><a href="signos/leao.html">Leão</a></li>
+                            <li><a href="signos/virgem.html">Virgem</a></li>
+                            <li><a href="signos/libra.html">Libra</a></li>
+                            <li><a href="signos/escorpiao.html">Escorpião</a></li>
+                            <li><a href="signos/sagitario.html">Sagitário</a></li>
+                            <li><a href="signos/capricornio.html">Capricórnio</a></li>
+                            <li><a href="signos/aquario.html">Aquário</a></li>
+                            <li><a href="signos/peixes.html">Peixes</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="menuItem"><a href="astrologia.php" class="underline">Astrologia</a></li>
+                    <li class="menuItem"><a href="venda.html">Meu Mapa</a></li>
+                    <li class="menuItem"><a href="">Coleção</a></li>
+
+                </ul>
+
+                <div id="divPerfil">
+
+                    <?php if (isset($_SESSION['usuario_nome'])): ?>
+
+                        <a href="perfil.php" class="usuario-logado">
+                            <img src="imagens/icones/mars.png" alt="Foto do Usuário">
+                            <div id="divInfoLogado">
+                                <span>Perfil</span>
+                                <span id="nomePerfil"><?php echo htmlspecialchars($_SESSION['usuario_nome']); ?></span>
+                                <a href="php/logout.php">Sair</a>
+                            </div>
+                        </a>
+
+                    <?php else: ?>
+                        <a href="login.html">Login</a>
+                    <?php endif; ?>
+                </div>
+
+            </nav>
+            <div id="banner">
+                <p>ASTROLOGIA</p>
+            </div>
+        </header>
+
+        <div id="conteudoAstrologia">
+
+            <div class="blockAstrologia">
+                <h2>O Que é Astrologia?</h2>
+                <p>
+                    Astrologia é um sistema simbólico que estuda a relação entre os movimentos dos astros (como o Sol, a
+                    Lua e os planetas) e os acontecimentos na Terra, especialmente os aspectos psicológicos e
+                    comportamentais dos seres humanos.
+                </p>
+                <h4>🌟Em Termos Simples:</h4>
+                <p id="simples">
+                    <strong>
+                        Astrologia é a ideia de que a posição dos astros no momento do seu nascimento influencia sua
+                        personalidade, seus ciclos de vida e até seus desafios e potencialidades.
+                    </strong>
+                </p>
+            </div>
+            <hr>
+            <div class="blockAstrologia">
+                <img class="imgBloco" id="imgUm">
+                <h2> <!-- 🌌-->A Astrologia e o Céu no Momento do Seu Nascimento</h2>
+                <p>
+                    O ponto de partida da astrologia é o <strong>mapa astral</strong>, também chamado de carta natal. Ele é como uma
+                    fotografia do céu no exato momento e local em que uma pessoa nasceu. A posição do Sol, da Lua e dos
+                    planetas revela informações únicas sobre a nossa essência, nossos talentos, desafios e caminhos de
+                    evolução.
+                </p>
+                <div>Cada elemento tem um significado:</div>
+                <ul class="lista">
+                    <li><strong>O Sol</strong> representa sua identidade e essência.</li>
+                    <li><strong>A Lua</strong> fala sobre suas emoções e mundo interior.</li>
+                    <li><strong>O Ascendente</strong> mostra como você se apresenta ao mundo.</li>
+                    <li><strong>Os planetas</strong> simbolizam diferentes áreas da vida (comunicação, amor, ação,
+                        etc.).</li>
+                    <li><strong>Os signos</strong> mostram o estilo com que essas energias se manifestam.</li>
+                    <li><strong>As casas astrológicas</strong> revelam as áreas da vida onde essas energias atuam.</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="blockAstrologia">
+                <h2><!-- 🧭-->Astrologia Não É Adivinhação</h2>
+                <p>
+                    Muita gente confunde astrologia com adivinhação, mas a proposta é bem diferente. A astrologia não
+                    determina o que vai acontecer com você — ela mostra <strong>tendências, padrões e possibilidades</strong>. É como um
+                    mapa: ele te guia, mas quem escolhe o caminho é você.
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="blockAstrologia">
+                <img class="imgBloco" id="imgDois">
+                <h2><!-- 🧠-->Uma Ferramenta de Autoconhecimento</h2>
+                <p>
+                    Na astrologia, cada pessoa é vista como um universo único. Ao estudar seu mapa astral, é possível
+                    compreender melhor seus comportamentos, emoções, relações e até os desafios recorrentes da vida. Por
+                    isso, muitos usam a astrologia como ferramenta terapêutica, de reflexão e desenvolvimento pessoal.
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="blockAstrologia">
+
+                <h2><!-- 🕰️-->Os Ciclos da Vida</h2>
+                <p>
+                    Além do mapa de nascimento, a astrologia analisa os <strong>trânsitos planetários</strong> — os movimentos atuais dos
+                    planetas em relação ao seu mapa natal. Isso permite identificar fases de expansão, introspecção,
+                    desafios e oportunidades, ajudando você a se alinhar com o ritmo natural do universo.
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="blockAstrologia">
+                <img class="imgBloco" id="imgTres">
+                <h2><!-- 🌍-->Tipos de Astrologia</h2>
+                <div style="margin-top: 10px 0;">A Astrologia Tem Várias Vertentes Como:</div>
+                <ul class="lista">
+                    <li><strong>Astrologia natal: </strong>foca na personalidade e trajetória individual.</li>
+                    <li><strong>Astrologia previsional: </strong>analisa períodos futuros com base em trânsitos e
+                        progressões.</li>
+                    <li><strong>Sinastria: </strong>compara mapas de duas pessoas para analisar compatibilidade.</li>
+                    <li><strong>Astrologia horária: </strong>responde perguntas específicas baseando-se no momento em
+                        que a pergunta é feita.</li>
+                    <li><strong>Astrologia mundana: </strong>analisa eventos coletivos e sociais.</li>
+                </ul>
+            </div>
+
+            <hr>
+
+            <div class="blockAstrologia">
+                <h2><!--⚖️-->Astrologia é Ciência?</h2>
+                <p>
+                    Apesar de não ser considerada uma ciência pelos padrões tradicionais, a astrologia guarda algumas
+                    <strong>verdades inconvenientes</strong> que deixam até os mais céticos intrigados. Pouca gente sabe é que, nos
+                    bastidores do Vale do Silício, a astrologia circula entre líderes das <strong>Big Techs</strong>.
+                </p>
+                <p>
+                    Algumas big techs — <strong>ou pelo menos seus fundadores e executivos</strong> — já admitiram consultar astrólogos
+                    para tomar decisões estratégicas. Steve Jobs, por exemplo, era conhecido por seu interesse em
+                    espiritualidade oriental e ciclos energéticos. Ele costumava consultar astrólogos para tomar
+                    decisões importantes na Apple. Outros empreendedores do mundo das startups têm recorrido à
+                    astrologia empresarial para escolher <strong>datas de lançamentos, analisar compatibilidade de sócios</strong> ou até
+                    contratar consultores que leem mapas astrais de equipes inteiras.
+                </p>
+            </div>
+
+            <hr>
+
+            <div class="blockAstrologia">
+                <h2>🌠Conclusão</h2>
+                <p>
+                    A astrologia é uma jornada de descoberta e reconexão com quem você realmente é. Mais do que prever o
+                    futuro, ela convida você a viver com mais consciência, entender seus ciclos e se alinhar com seu
+                    propósito.
+                </p>
+                <p>
+                    Seja você iniciante, curioso ou entusiasta, a astrologia pode ser uma aliada valiosa no caminho do
+                    autoconhecimento.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <div id="footerContent">
+
+            <div id="footerDivs">
+
+                <div id="logoWrapper">
+                    <div id="logoFooter">Astro<span id="spanFooter">Realm</span></div>
+                    <p>
+                        Descubra seu destino e conecte-se com o universo através da astrologia. <br>Explore os
+                        mistérios
+                        dos
+                        signos e muito mais!
+                    </p>
+                </div>
+
+                <div class="colunaFooter">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>Email: contato@astrorealm.com</li>
+                        <li>Telefone: (11) 1234-5678</li>
+                        <li>
+                            <ul id="redesSociaisLinks">
+                                <li><a href="https://github.com/alvGitCodes"><img
+                                            src="imagens/icones footer/github_1051275.png" title="GitHub" alt="github">
+                                        <div>Github</div>
+                                    </a></li>
+                                <li><a href=""><img src="imagens/icones footer/linkedin_1051282.png" title="Linkedin"
+                                            alt="linkedin">LinkedIn</a></li>
+                                <li><a href=""><img src="imagens/icones footer/whatsapp_1051272.png" alt="">WhatsApp</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="colunaFooter">
+                    <h3>Recursos</h3>
+                    <ul class="reucursosLinks">
+                        <li><a href="https://freepik.com/">Freepik</a></li>
+                        <li><a href="https://rapidapi.com/">Rapid Api</a></li>
+                        <li><a href="https://rapidapi.com/gbattaglia/api/astrologer">Astrologer</a></li>
+                        <li><a href="https://rapidapi.com/ashutosh.devil7/api/horoscope19">Horoscope</a></li>
+                        <li><a href="https://rapidapi.com/gatzuma/api/deep-translate1">Deep Translate</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="footerCredits">© 2024 AstroRealm. Todos os direitos reservados. Imagens por Freepik.</p>
+    </footer>
+
+
+    <button id="scrollToTopBtn" title="Voltar ao topo">&#11205;</button>
+
+</body>
+
+</html>
